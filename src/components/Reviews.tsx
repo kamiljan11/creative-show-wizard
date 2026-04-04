@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
 
 const reviews = [
   {
@@ -21,35 +22,39 @@ const reviews = [
   },
 ];
 
-const Reviews = () => (
-  <section className="py-24 bg-card">
-    <div className="container mx-auto px-6">
-      <h2 className="text-4xl md:text-5xl font-heading font-semibold text-center mb-4">
-        Opinie <span className="text-gradient-warm">gości</span>
-      </h2>
-      <p className="text-center text-muted-foreground font-body mb-16">
-        4.9 / 5 na podstawie 127 recenzji
-      </p>
+const Reviews = () => {
+  const { lang, t } = useLang();
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {reviews.map((r) => (
-          <div key={r.name} className="p-8 rounded-lg bg-secondary border border-border relative">
-            <Quote className="w-8 h-8 text-primary/20 absolute top-6 right-6" />
-            <div className="flex gap-1 mb-4">
-              {Array.from({ length: r.rating }).map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-              ))}
+  return (
+    <section id="reviews" className="py-24 bg-card">
+      <div className="container mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl font-heading font-semibold text-center mb-4">
+          {t.reviews.title[lang]} <span className="text-gradient-warm">{t.reviews.titleAccent[lang]}</span>
+        </h2>
+        <p className="text-center text-muted-foreground font-body mb-16">
+          {t.reviews.subtitle[lang]}
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {reviews.map((r) => (
+            <div key={r.name} className="p-8 rounded-lg bg-secondary border border-border relative">
+              <Quote className="w-8 h-8 text-primary/20 absolute top-6 right-6" />
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: r.rating }).map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="text-sm text-foreground/80 font-body italic mb-6 leading-relaxed">"{r.text}"</p>
+              <div>
+                <p className="font-heading font-semibold text-sm">{r.name}</p>
+                <p className="text-xs text-muted-foreground font-body">{r.country}</p>
+              </div>
             </div>
-            <p className="text-sm text-foreground/80 font-body italic mb-6 leading-relaxed">"{r.text}"</p>
-            <div>
-              <p className="font-heading font-semibold text-sm">{r.name}</p>
-              <p className="text-xs text-muted-foreground font-body">{r.country}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Reviews;
