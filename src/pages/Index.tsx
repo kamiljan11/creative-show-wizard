@@ -4,6 +4,7 @@ import Rooms from "@/components/Rooms";
 import Amenities from "@/components/Amenities";
 import Reviews from "@/components/Reviews";
 import BookingCTA from "@/components/BookingCTA";
+import WebsiteCTA from "@/components/WebsiteCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => (
@@ -14,6 +15,7 @@ const Index = () => (
     <Amenities />
     <Reviews />
     <BookingCTA />
+    <WebsiteCTA />
     <Footer />
   </div>
 );
