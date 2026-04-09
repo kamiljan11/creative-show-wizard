@@ -6,6 +6,7 @@ export const translations = {
     amenities: { en: "Amenities", pl: "Udogodnienia", is: "Þægindi" },
     reviews: { en: "Reviews", pl: "Opinie", is: "Umsagnir" },
     contact: { en: "Contact", pl: "Kontakt", is: "Hafa samband" },
+    experiences: { en: "Experiences", pl: "Atrakcje", is: "Upplifanir" },
     book: { en: "Book now", pl: "Rezerwuj", is: "Bóka" },
   },
   hero: {
@@ -79,6 +80,166 @@ export const translations = {
       { label: { en: "Breakfast", pl: "Śniadanie", is: "Morgunmatur" }, desc: { en: "Local Icelandic products", pl: "Lokalne islandzkie produkty", is: "Staðbundin íslensk matvæli" } },
       { label: { en: "Kitchen", pl: "Kuchnia", is: "Eldhús" }, desc: { en: "Fully equipped", pl: "W pełni wyposażona", is: "Fullbúið" } },
       { label: { en: "Safety", pl: "Bezpieczeństwo", is: "Öryggi" }, desc: { en: "24/7 host contact", pl: "24/7 kontakt z gospodarzem", is: "24/7 samband við gestgjafa" } },
+    ],
+  },
+  experiences: {
+    title: { en: "Nearby", pl: "Lokalne", is: "Nálægar" },
+    titleAccent: { en: "Experiences", pl: "atrakcje", is: "upplifanir" },
+    subtitle: {
+      en: "The Westfjords are Iceland's best-kept secret. Here's what awaits you.",
+      pl: "Fiordy Zachodnie to najlepiej strzeżony sekret Islandii. Oto co na Ciebie czeka.",
+      is: "Vestfirðir eru best varðveitt leyndarmál Íslands. Hér er það sem bíður þín.",
+    },
+    items: [
+      {
+        title: { en: "Northern Lights", pl: "Zorza polarna", is: "Norðurljós" },
+        desc: {
+          en: "Sep–Mar: Watch the aurora dance right from the hot tub. No light pollution — one of the best spots in Iceland.",
+          pl: "Wrz–Mar: Obserwuj zorzę polarną prosto z gorącej bali. Brak zanieczyszczenia światłem — jedno z najlepszych miejsc na Islandii.",
+          is: "Sep–Mar: Horfðu á norðurljósin dansa beint úr heita pottinum. Engin ljósmengun — einn besti staðurinn á Íslandi.",
+        },
+        season: { en: "Sep – Mar", pl: "Wrz – Mar", is: "Sep – Mar" },
+      },
+      {
+        title: { en: "Whale Watching", pl: "Obserwacja wielorybów", is: "Hvalaskoðun" },
+        desc: {
+          en: "Jun–Sep: Humpback whales, orcas, and dolphins in Ísafjarðardjúp bay. Boat tours from 15 min drive.",
+          pl: "Cze–Wrz: Humbacki, orki i delfiny w zatoce Ísafjarðardjúp. Rejsy z 15 min jazdy.",
+          is: "Jún–Sep: Hnúfubakur, háhyrningur og höfrungur í Ísafjarðardjúpi. Bátaferðir frá 15 mín akstur.",
+        },
+        season: { en: "Jun – Sep", pl: "Cze – Wrz", is: "Jún – Sep" },
+      },
+      {
+        title: { en: "Hiking & Trails", pl: "Trekking i szlaki", is: "Gönguferðir" },
+        desc: {
+          en: "Hornstrandir nature reserve, Dynjandi waterfall, and countless unmarked trails through ancient valleys.",
+          pl: "Rezerwat Hornstrandir, wodospad Dynjandi i niezliczone szlaki przez pradawne doliny.",
+          is: "Hornstrandir náttúruvernd, Dynjandi foss og óteljandi ómerktar leiðir um fornar dalir.",
+        },
+        season: { en: "May – Oct", pl: "Maj – Paź", is: "Maí – Okt" },
+      },
+      {
+        title: { en: "Hot Springs", pl: "Gorące źródła", is: "Heitar laugar" },
+        desc: {
+          en: "Natural geothermal pools hidden in the landscape. Hellulaug and Reykjafjarðarlaug — wild bathing at its finest.",
+          pl: "Naturalne baseny geotermalne ukryte w krajobrazie. Hellulaug i Reykjafjarðarlaug — dzikie kąpiele w najlepszym wydaniu.",
+          is: "Náttúrulegir jarðhitalaugar faldir í landslaginu. Hellulaug og Reykjafjarðarlaug — villtar böðun á sínu besta.",
+        },
+        season: { en: "Year-round", pl: "Cały rok", is: "Allt árið" },
+      },
+    ],
+  },
+  host: {
+    tag: { en: "YOUR HOST", pl: "TWOJA GOSPODYNI", is: "GESTGJAFINN" },
+    name: "Guðrún Helgadóttir",
+    title: { en: "Born in the Westfjords.", pl: "Urodzona w Fiordach Zachodnich.", is: "Fædd á Vestfjörðum." },
+    titleAccent: { en: "Living for the land.", pl: "Żyjąca dla tej ziemi.", is: "Lifir fyrir landið." },
+    story: {
+      en: "I've lived in the Westfjords my entire life. My grandmother ran a guesthouse here in the 1960s, and I always dreamed of continuing that tradition. Fjallsýn is my way of sharing this incredible, untouched part of Iceland with the world. I prepare breakfast with ingredients from local farms, and I know every hidden trail and hot spring within a hundred kilometres.",
+      pl: "Całe życie mieszkam w Fiordach Zachodnich. Moja babcia prowadziła tu pensjonat w latach 60., a ja zawsze marzyłam o kontynuowaniu tej tradycji. Fjallsýn to mój sposób na dzielenie się tą niesamowitą, nietknięta częścią Islandii ze światem. Przygotowuję śniadania z produktów od lokalnych farmerów i znam każdy ukryty szlak i gorące źródło w promieniu stu kilometrów.",
+      is: "Ég hef búið á Vestfjörðum allt mitt líf. Amma mín rak gistiheimili hér á sjöunda áratugnum og ég dreymdi alltaf um að halda þeirri hefð áfram. Fjallsýn er mín leið til að deila þessum ótrúlega, ósnortna hluta Íslands með heiminum. Ég útbý morgunmat úr hráefnum frá nálægum bæjum og þekki hverja falda gönguleið og heita laug innan hundraðs kílómetra.",
+    },
+    quote: {
+      en: "\"The mountains don't care about your schedule. Come, slow down, and breathe.\"",
+      pl: "\"Góry nie przejmują się twoim grafikiem. Przyjdź, zwolnij i oddychaj.\"",
+      is: "\"Fjöllin er sama um dagskrána þína. Komdu, hægðu á þér og andaðu.\"",
+    },
+  },
+  gallery: {
+    title: { en: "Moments from", pl: "Chwile z", is: "Augnablik frá" },
+    titleAccent: { en: "Fjallsýn", pl: "Fjallsýn", is: "Fjallsýn" },
+  },
+  location: {
+    title: { en: "Getting", pl: "Jak do nas", is: "Hvernig á að" },
+    titleAccent: { en: "here", pl: "dotrzeć", is: "komast hingað" },
+    subtitle: {
+      en: "Remote doesn't mean hard to reach. Here's how to find us.",
+      pl: "Odległość nie oznacza trudnego dojazdu. Oto jak nas znaleźć.",
+      is: "Afskekktur þýðir ekki erfiður aðgangur. Svona finnurðu okkur.",
+    },
+    airport: {
+      label: { en: "Nearest Airport", pl: "Najbliższe lotnisko", is: "Næsti flugvöllur" },
+      value: { en: "Ísafjörður (IFJ) — 25 min drive", pl: "Ísafjörður (IFJ) — 25 min jazdy", is: "Ísafjörður (IFJ) — 25 mín akstur" },
+    },
+    drive: {
+      label: { en: "From Reykjavík", pl: "Z Reykjavíku", is: "Frá Reykjavík" },
+      value: { en: "~5h via Route 1 & 61 (scenic!)", pl: "~5h trasą nr 1 i 61 (malownicza!)", is: "~5 klst um leið 1 og 61 (falleg!)" },
+    },
+    road: {
+      label: { en: "Road Conditions", pl: "Stan dróg", is: "Vegaástand" },
+      value: { en: "Paved roads year-round. F-roads closed in winter.", pl: "Drogi asfaltowe cały rok. Drogi F zamknięte zimą.", is: "Malbikaðir vegir allt árið. F-vegir lokaðir á veturna." },
+    },
+    pickup: {
+      label: { en: "Airport Pickup", pl: "Odbiór z lotniska", is: "Sótt á flugvöll" },
+      value: { en: "Free pickup available — just ask!", pl: "Bezpłatny odbiór — wystarczy zapytać!", is: "Ókeypis sótt — bara spurðu!" },
+    },
+    mapLabel: { en: "View on Google Maps", pl: "Zobacz na Google Maps", is: "Skoða á Google Maps" },
+  },
+  pricing: {
+    title: { en: "Seasonal", pl: "Cennik", is: "Árstíðar" },
+    titleAccent: { en: "Pricing", pl: "sezonowy", is: "verðlag" },
+    subtitle: {
+      en: "Book directly and save 15–20% compared to Booking.com & Airbnb.",
+      pl: "Rezerwuj bezpośrednio i oszczędź 15–20% w porównaniu z Booking.com i Airbnb.",
+      is: "Bókaðu beint og sparaðu 15–20% miðað við Booking.com og Airbnb.",
+    },
+    seasons: [
+      {
+        name: { en: "❄️ Winter", pl: "❄️ Zima", is: "❄️ Vetur" },
+        months: { en: "Nov – Mar", pl: "Lis – Mar", is: "Nóv – Mar" },
+        eldvorp: "19 900",
+        jokull: "14 900",
+        note: { en: "Aurora season! Best for northern lights.", pl: "Sezon zorzy! Najlepszy na zorzę polarną.", is: "Norðurljósatímabil! Best fyrir norðurljós." },
+      },
+      {
+        name: { en: "🌸 Spring", pl: "🌸 Wiosna", is: "🌸 Vor" },
+        months: { en: "Apr – May", pl: "Kwi – Maj", is: "Apr – Maí" },
+        eldvorp: "22 900",
+        jokull: "17 900",
+        note: { en: "Puffins arrive. Waterfalls at full power.", pl: "Przylatują maskonury. Wodospady pełną mocą.", is: "Lundinn kemur. Fossar í fullum krafti." },
+      },
+      {
+        name: { en: "☀️ Summer", pl: "☀️ Lato", is: "☀️ Sumar" },
+        months: { en: "Jun – Aug", pl: "Cze – Sie", is: "Jún – Ágú" },
+        eldvorp: "29 900",
+        jokull: "24 900",
+        note: { en: "Midnight sun. 24h daylight. Peak hiking.", pl: "Słońce o północy. 24h światła. Szczyt sezonu trekkingowego.", is: "Miðnætursól. 24 klst dagsljós. Besti göngutíminn." },
+      },
+      {
+        name: { en: "🍂 Autumn", pl: "🍂 Jesień", is: "🍂 Haust" },
+        months: { en: "Sep – Oct", pl: "Wrz – Paź", is: "Sep – Okt" },
+        eldvorp: "22 900",
+        jokull: "17 900",
+        note: { en: "Colours change. Fewer tourists. First auroras.", pl: "Kolory się zmieniają. Mniej turystów. Pierwsze zorze.", is: "Litir breytast. Færri ferðamenn. Fyrstu norðurljósin." },
+      },
+    ],
+    perNight: { en: "ISK/night", pl: "ISK/noc", is: "ISK/nótt" },
+    directSave: { en: "Direct booking — save 15%", pl: "Rezerwacja bezpośrednia — oszczędź 15%", is: "Bein bókun — sparaðu 15%" },
+  },
+  faq: {
+    title: { en: "Frequently Asked", pl: "Często zadawane", is: "Algengar" },
+    titleAccent: { en: "Questions", pl: "pytania", is: "spurningar" },
+    items: [
+      {
+        q: { en: "Is the cottage suitable for children?", pl: "Czy domek jest odpowiedni dla dzieci?", is: "Er skálinn hentugur fyrir börn?" },
+        a: { en: "Yes! The Jökull Room fits families of up to 4. We provide cots and high chairs on request. The area is safe, but please supervise children near the hot tub.", pl: "Tak! Pokój Jökull pomieści rodziny do 4 osób. Na życzenie zapewniamy łóżeczka i krzesełka. Okolica jest bezpieczna, ale prosimy o nadzór nad dziećmi przy hot tubie.", is: "Já! Jökull herbergið rúmar fjölskyldur upp að 4. Við útvegum barnarúm og háa stóla ef óskað er. Svæðið er öruggt en vinsamlegast hafið eftirlit með börnum við heita pottinn." },
+      },
+      {
+        q: { en: "Do you have EV charging?", pl: "Czy macie ładowanie EV?", is: "Er rafbílahleðsla til staðar?" },
+        a: { en: "Yes, we have a 22kW Type 2 charger available free for all guests. Iceland runs almost entirely on renewable energy — charge guilt-free!", pl: "Tak, mamy ładowarkę 22kW Type 2 dostępną bezpłatnie dla wszystkich gości. Islandia działa prawie wyłącznie na energii odnawialnej — ładuj bez wyrzutów sumienia!", is: "Já, við höfum 22kW Type 2 hleðslutæki ókeypis öllum gestum. Ísland keyrir nánast eingöngu á endurnýjanlega orku — hladdu samviskuhreinlega!" },
+      },
+      {
+        q: { en: "What if the weather is bad?", pl: "Co jeśli pogoda będzie zła?", is: "Hvað ef veðrið er slæmt?" },
+        a: { en: "Icelandic weather is part of the experience! The cottage is fully equipped for storms — cozy fireplace, board games, books, and a fully stocked kitchen. Many guests say the stormy nights were their favourite.", pl: "Islandzka pogoda to część doświadczenia! Domek jest w pełni przygotowany na burze — przytulny kominek, gry planszowe, książki i w pełni zaopatrzona kuchnia. Wielu gości mówi, że burzliwe noce były ich ulubionymi.", is: "Íslenskt veður er hluti af upplifuninni! Skálinn er fullbúinn fyrir storma — notalegur arinn, borðspil, bækur og fullbúið eldhús. Margir gestir segja að stormarnir hafi verið uppáhalds nóttirnar." },
+      },
+      {
+        q: { en: "Can you arrange tours or activities?", pl: "Czy możecie zorganizować wycieczki?", is: "Getið þið skipulagt ferðir?" },
+        a: { en: "Absolutely. We work with trusted local guides for kayaking, fishing, horse riding, and glacier walks. Guðrún can arrange everything — just ask when you book.", pl: "Oczywiście. Współpracujemy z zaufanymi lokalnymi przewodnikami — kajakowanie, wędkowanie, jazda konna i spacery po lodowcu. Guðrún wszystko zorganizuje — wystarczy zapytać przy rezerwacji.", is: "Algjörlega. Við vinnum með traustum staðbundnum leiðsögumönnum fyrir siglingar, veiðar, hestamennsku og jökulferðir. Guðrún getur skipulagt allt — bara spurðu þegar þú bókar." },
+      },
+      {
+        q: { en: "What's your cancellation policy?", pl: "Jaka jest polityka anulowania?", is: "Hver er afbókunarstefnan?" },
+        a: { en: "Free cancellation up to 7 days before check-in. 50% refund for cancellations 3–7 days before. No refund for cancellations less than 3 days before arrival.", pl: "Bezpłatne anulowanie do 7 dni przed zameldowaniem. 50% zwrotu za anulowanie 3–7 dni wcześniej. Brak zwrotu za anulowanie mniej niż 3 dni przed przyjazdem.", is: "Ókeypis afbókun allt að 7 dögum fyrir innritun. 50% endurgreiðsla fyrir afbókanir 3–7 dögum fyrir. Engin endurgreiðsla fyrir afbókanir minna en 3 dögum fyrir komu." },
+      },
     ],
   },
   reviews: {
