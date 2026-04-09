@@ -1,7 +1,9 @@
 import heroCabin from "@/assets/hero-cabin.jpg";
 import { Button } from "@/components/ui/button";
-import { MapPin, Star } from "lucide-react";
+import { MapPin, Star, ExternalLink } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+
+const BOOKING_URL = "https://www.booking.com/hotel/is/fjallsyn-cottage.html";
 
 const Hero = () => {
   const { lang, t } = useLang();
@@ -41,13 +43,20 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-            <Button size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body">
-              {t.hero.bookNow[lang]}
-            </Button>
-            <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20">
-              {t.hero.viewRooms[lang]}
-            </Button>
+            <a href="#contact-form">
+              <Button size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body w-full sm:w-auto">
+                {t.hero.bookNow[lang]}
+              </Button>
+            </a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto">
+                Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
+              </Button>
+            </a>
           </div>
+          <p className="text-[10px] md:text-xs text-primary/70 font-body mt-2">
+            {t.pricing.directSave[lang]}
+          </p>
         </div>
       </div>
     </section>

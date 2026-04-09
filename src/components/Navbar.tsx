@@ -34,9 +34,11 @@ const Navbar = () => {
 
         <div className="flex items-center gap-2 md:gap-3">
           <LanguageSwitcher />
-          <Button size="sm" className="font-body hidden sm:inline-flex text-xs md:text-sm">
-            {t.nav.book[lang]}
-          </Button>
+          <a href="#contact-form">
+            <Button size="sm" className="font-body hidden sm:inline-flex text-xs md:text-sm">
+              {t.nav.book[lang]}
+            </Button>
+          </a>
           <button
             className="md:hidden text-foreground"
             onClick={() => setOpen(!open)}
@@ -59,7 +61,9 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <Button className="w-full font-body mt-2 text-sm">{t.nav.book[lang]}</Button>
+          <a href="#contact-form" onClick={() => setOpen(false)}>
+            <Button className="w-full font-body mt-2 text-sm">{t.nav.book[lang]}</Button>
+          </a>
         </div>
       )}
     </nav>

@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { CalendarDays, Phone, Mail, MessageCircle, ShieldCheck } from "lucide-react";
+import { CalendarDays, Phone, Mail, MessageCircle, ShieldCheck, ExternalLink } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+
+const BOOKING_URL = "https://www.booking.com/hotel/is/fjallsyn-cottage.html";
 
 const BookingCTA = () => {
   const { lang, t } = useLang();
@@ -19,22 +21,35 @@ const BookingCTA = () => {
             <p className="text-sm md:text-base text-muted-foreground font-body mb-6 md:mb-8 max-w-md mx-auto">
               {t.booking.subtitle[lang]}
             </p>
-            <div className="flex flex-col gap-3 md:flex-row md:gap-4 justify-center mb-6 md:mb-8">
-              <Button size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body">
-                <CalendarDays className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                {t.booking.checkAvailability[lang]}
-              </Button>
-              <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20">
-                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                {t.booking.whatsapp[lang]}
-              </Button>
+
+            {/* Two booking paths — like real Icelandic guesthouses */}
+            <div className="flex flex-col gap-3 md:flex-row md:gap-4 justify-center mb-4 md:mb-6">
+              <a href="#contact-form">
+                <Button size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body w-full md:w-auto">
+                  <CalendarDays className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  {t.booking.checkAvailability[lang]}
+                </Button>
+              </a>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full md:w-auto">
+                  Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
+                </Button>
+              </a>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center text-xs md:text-sm text-muted-foreground font-body">
+
+            <p className="text-[10px] md:text-xs text-primary/70 font-body mb-6 md:mb-8">
+              {t.pricing.directSave[lang]}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center text-xs md:text-sm text-muted-foreground font-body pt-4 md:pt-6 border-t border-border/30">
               <a href="tel:+3548881234" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" /> +354 888 1234
               </a>
               <a href="mailto:info@fjallsyn.is" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-3.5 h-3.5 md:w-4 md:h-4" /> info@fjallsyn.is
+              </a>
+              <a href="https://wa.me/3548881234" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
+                <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4" /> WhatsApp
               </a>
             </div>
           </div>
