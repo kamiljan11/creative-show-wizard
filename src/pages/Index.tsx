@@ -15,6 +15,7 @@ const Index = () => (
     <Amenities />
     <Reviews />
     <BookingCTA />
+    <WebsiteCTA />
     <Footer />
   </div>
 );
