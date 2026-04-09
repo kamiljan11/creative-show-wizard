@@ -1,14 +1,14 @@
 import roomCozy from "@/assets/room-cozy.jpg";
 import roomGlacier from "@/assets/room-glacier.jpg";
 import hotTub from "@/assets/hot-tub.jpg";
-import { Users, Maximize, Wifi } from "lucide-react";
+import { Users, Maximize, Wifi, Bath, BedDouble, CheckCircle } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const roomImages = [roomCozy, roomGlacier, hotTub];
 const roomMeta = [
-  { guests: 2, size: "45m²", price: "24 900" },
-  { guests: 2, size: "38m²", price: "19 900" },
-  { guests: 4, size: "Outdoor", price: null },
+  { guests: 2, price: "24 900" },
+  { guests: 2, price: "19 900" },
+  { guests: 4, price: null },
 ];
 
 const Rooms = () => {
@@ -40,11 +40,35 @@ const Rooms = () => {
               <div className="p-6">
                 <h3 className="text-xl font-heading font-semibold mb-2">{room.name}</h3>
                 <p className="text-sm text-muted-foreground font-body mb-4">{room.desc[lang]}</p>
-                <div className="flex items-center gap-4 text-xs text-muted-foreground font-body mb-4">
+
+                <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground font-body mb-3">
                   <span className="flex items-center gap-1"><Users className="w-3 h-3" /> {roomMeta[i].guests} {t.rooms.guests[lang]}</span>
-                  <span className="flex items-center gap-1"><Maximize className="w-3 h-3" /> {roomMeta[i].size}</span>
+                  {room.sqm && (
+                    <span className="flex items-center gap-1"><Maximize className="w-3 h-3" /> {room.sqm}m²</span>
+                  )}
                   <span className="flex items-center gap-1"><Wifi className="w-3 h-3" /> Wi-Fi</span>
                 </div>
+
+                {(room.bathroom || room.bed) && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {room.bed && (
+                      <span className="inline-flex items-center gap-1 text-xs font-body bg-primary/10 text-primary px-2.5 py-1 rounded-full">
+                        <BedDouble className="w-3 h-3" /> {room.bed[lang]}
+                      </span>
+                    )}
+                    {room.bathroom && (
+                      <span className="inline-flex items-center gap-1 text-xs font-body bg-accent/10 text-accent-foreground px-2.5 py-1 rounded-full">
+                        <Bath className="w-3 h-3" /> {room.bathroom[lang]}
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                <div className="flex items-center gap-1 text-xs text-primary/70 font-body mb-4">
+                  <CheckCircle className="w-3 h-3" />
+                  {t.rooms.breakfastIncluded[lang]}
+                </div>
+
                 <div className="flex items-end justify-between">
                   <div>
                     <span className="text-2xl font-heading font-bold text-primary">
