@@ -47,50 +47,57 @@ const Reviews = () => {
   const { lang, t } = useLang();
 
   return (
-    <section id="reviews" className="py-24 bg-card">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-heading font-semibold text-center mb-4">
+    <section id="reviews" className="py-16 md:py-24 bg-card">
+      <div className="container mx-auto px-4 md:px-6">
+        <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center mb-2 md:mb-4">
           {t.reviews.title[lang]} <span className="text-gradient-warm">{t.reviews.titleAccent[lang]}</span>
         </h2>
-        <p className="text-center text-muted-foreground font-body mb-6">
+        <p className="text-center text-muted-foreground font-body text-sm md:text-base mb-4 md:mb-6">
           {t.reviews.subtitle[lang]}
         </p>
 
-        {/* Platform score badges */}
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
+        {/* Platform score badges - compact on mobile */}
+        <div className="flex justify-center gap-3 md:gap-6 mb-8 md:mb-12">
           {Object.entries(t.reviews.platforms).map(([key, p]) => (
-            <div key={key} className="flex items-center gap-2 text-sm font-body">
-              <div className={`w-8 h-8 rounded ${platformColors[p.en] || "bg-primary"} flex items-center justify-center`}>
-                <Star className="w-4 h-4 text-white fill-white" />
+            <div key={key} className="flex items-center gap-2 text-xs md:text-sm font-body">
+              <div className={`w-8 h-8 md:w-8 md:h-8 rounded ${platformColors[p.en] || "bg-primary"} flex items-center justify-center`}>
+                <Star className="w-3.5 h-3.5 md:w-4 md:h-4 text-white fill-white" />
               </div>
               <div>
-                <span className="font-semibold text-foreground text-xs">{p.en}</span>
-                <p className="text-xs text-muted-foreground">{p.score} ({p.reviews})</p>
+                <span className="font-semibold text-foreground text-[10px] md:text-xs">{p.en}</span>
+                <p className="text-[10px] md:text-xs text-muted-foreground">{p.score}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {/* Horizontal scroll on mobile */}
+        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-auto md:px-0 scrollbar-hide">
           {reviews.map((r) => (
-            <div key={r.name} className="p-8 rounded-lg bg-secondary border border-border relative">
-              <Quote className="w-8 h-8 text-primary/20 absolute top-6 right-6" />
-              <div className="flex gap-1 mb-4">
+            <div key={r.name} className="p-5 md:p-8 rounded-lg bg-secondary border border-border relative min-w-[270px] w-[80vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink">
+              <Quote className="w-6 h-6 md:w-8 md:h-8 text-primary/20 absolute top-4 right-4 md:top-6 md:right-6" />
+              <div className="flex gap-1 mb-3 md:mb-4">
                 {Array.from({ length: r.rating }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  <Star key={i} className="w-3.5 h-3.5 md:w-4 md:h-4 fill-primary text-primary" />
                 ))}
               </div>
-              <p className="text-sm text-foreground/80 font-body italic mb-6 leading-relaxed">"{r.text[lang]}"</p>
+              <p className="text-xs md:text-sm text-foreground/80 font-body italic mb-4 md:mb-6 leading-relaxed">"{r.text[lang]}"</p>
               <div className="flex items-end justify-between">
                 <div>
-                  <p className="font-heading font-semibold text-sm">{r.name}</p>
-                  <p className="text-xs text-muted-foreground font-body">{r.country}</p>
+                  <p className="font-heading font-semibold text-xs md:text-sm">{r.name}</p>
+                  <p className="text-[10px] md:text-xs text-muted-foreground font-body">{r.country}</p>
                 </div>
-                <span className={`text-xs font-body px-2 py-0.5 rounded ${platformColors[r.platform]} text-white`}>
+                <span className={`text-[10px] md:text-xs font-body px-2 py-0.5 rounded ${platformColors[r.platform]} text-white`}>
                   {r.platform}
                 </span>
               </div>
             </div>
+          ))}
+        </div>
+
+        <div className="flex md:hidden justify-center gap-1.5 mt-4">
+          {reviews.map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/30" />
           ))}
         </div>
       </div>

@@ -5,12 +5,12 @@ const Footer = () => {
   const { lang, t } = useLang();
 
   return (
-    <footer className="py-16 border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-10 mb-10">
-          <div>
-            <h3 className="text-xl font-heading font-semibold mb-2">Fjallsýn Cottage</h3>
-            <p className="text-sm text-muted-foreground font-body flex items-center gap-1 mb-4">
+    <footer className="py-10 md:py-16 border-t border-border">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 mb-8 md:mb-10">
+          <div className="col-span-2 md:col-span-1">
+            <h3 className="text-lg md:text-xl font-heading font-semibold mb-2">Fjallsýn Cottage</h3>
+            <p className="text-xs md:text-sm text-muted-foreground font-body flex items-center gap-1 mb-3 md:mb-4">
               <MapPin className="w-3 h-3" /> Vestfjörðar, Ísland
             </p>
             <div className="flex items-center gap-4">
@@ -24,8 +24,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold mb-3 text-sm">{t.nav.contact[lang]}</h4>
-            <div className="space-y-2 text-sm text-muted-foreground font-body">
+            <h4 className="font-heading font-semibold mb-2 md:mb-3 text-xs md:text-sm">{t.nav.contact[lang]}</h4>
+            <div className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground font-body">
               <a href="tel:+3548881234" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-3 h-3" /> +354 888 1234
               </a>
@@ -39,19 +39,18 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold mb-3 text-sm">{t.footer.quickLinks[lang]}</h4>
-            <div className="space-y-2 text-sm font-body">
+            <h4 className="font-heading font-semibold mb-2 md:mb-3 text-xs md:text-sm">{t.footer.quickLinks[lang]}</h4>
+            <div className="space-y-1.5 md:space-y-2 text-xs md:text-sm font-body">
               <a href="#rooms" className="block text-muted-foreground hover:text-primary transition-colors">{t.nav.rooms[lang]}</a>
               <a href="#experiences" className="block text-muted-foreground hover:text-primary transition-colors">{t.nav.experiences[lang]}</a>
               <a href="#amenities" className="block text-muted-foreground hover:text-primary transition-colors">{t.nav.amenities[lang]}</a>
               <a href="#reviews" className="block text-muted-foreground hover:text-primary transition-colors">{t.nav.reviews[lang]}</a>
-              <a href="#contact" className="block text-muted-foreground hover:text-primary transition-colors">{t.nav.contact[lang]}</a>
             </div>
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold mb-3 text-sm">{t.footer.usefulLinks[lang]}</h4>
-            <div className="space-y-2 text-sm font-body">
+            <h4 className="font-heading font-semibold mb-2 md:mb-3 text-xs md:text-sm">{t.footer.usefulLinks[lang]}</h4>
+            <div className="space-y-1.5 md:space-y-2 text-xs md:text-sm font-body">
               <a href="https://www.road.is" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
                 road.is <ExternalLink className="w-3 h-3" />
               </a>
@@ -68,15 +67,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Platform badges row */}
-        <div className="flex flex-wrap justify-center gap-6 py-6 border-t border-border mb-6">
-          <span className="text-xs text-muted-foreground font-body">Booking.com — 9.4/10</span>
-          <span className="text-xs text-muted-foreground font-body">TripAdvisor — 5.0/5</span>
-          <span className="text-xs text-muted-foreground font-body">Google — 4.9/5</span>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 py-4 md:py-6 border-t border-border mb-4 md:mb-6">
+          <span className="text-[10px] md:text-xs text-muted-foreground font-body">Booking.com — 9.4/10</span>
+          <span className="text-[10px] md:text-xs text-muted-foreground font-body">TripAdvisor — 5.0/5</span>
+          <span className="text-[10px] md:text-xs text-muted-foreground font-body">Google — 4.9/5</span>
         </div>
 
         <div className="text-center">
-          <p className="text-xs text-muted-foreground font-body">
+          <p className="text-[10px] md:text-xs text-muted-foreground font-body">
             {t.footer.rights[lang]}
           </p>
         </div>
