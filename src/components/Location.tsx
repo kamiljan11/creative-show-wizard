@@ -1,4 +1,4 @@
-import { Plane, Car, CloudSnow, HandMetal, MapPin, ExternalLink, AlertTriangle } from "lucide-react";
+import { Plane, Car, CloudSnow, HandMetal, MapPin } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const Location = () => {
@@ -35,29 +35,6 @@ const Location = () => {
                 </div>
               </div>
             ))}
-
-            <div className="flex flex-col gap-2 pt-1 md:pt-2">
-              <a
-                href="https://www.road.is"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs md:text-sm text-primary hover:underline font-body px-4 md:px-5"
-              >
-                <AlertTriangle className="w-3 h-3 md:w-3.5 md:h-3.5" />
-                {t.location.roadLink[lang]}
-                <ExternalLink className="w-3 h-3" />
-              </a>
-              <a
-                href="https://safetravel.is"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs md:text-sm text-primary hover:underline font-body px-4 md:px-5"
-              >
-                <AlertTriangle className="w-3 h-3 md:w-3.5 md:h-3.5" />
-                {t.location.safetravel[lang]}
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
           </div>
 
           <div className="rounded-lg overflow-hidden border border-border h-64 md:h-full md:min-h-[360px]">
