@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CalendarDays, Phone, Mail } from "lucide-react";
+import { CalendarDays, Phone, Mail, MessageCircle, ShieldCheck } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const BookingCTA = () => {
@@ -12,7 +12,7 @@ const BookingCTA = () => {
           style={{ background: "var(--gradient-aurora)" }}>
           <div className="absolute inset-0 bg-background/60" />
           <div className="relative z-10">
-            <CalendarDays className="w-10 h-10 text-primary mx-auto mb-6" />
+            <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-4">
               {t.booking.title[lang]} <span className="text-primary">{t.booking.titleAccent[lang]}</span>
             </h2>
@@ -21,7 +21,12 @@ const BookingCTA = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button size="lg" className="text-lg px-8 py-6 font-body">
+                <CalendarDays className="w-5 h-5 mr-2" />
                 {t.booking.checkAvailability[lang]}
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 font-body border-foreground/20">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                {t.booking.whatsapp[lang]}
               </Button>
             </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-sm text-muted-foreground font-body">
