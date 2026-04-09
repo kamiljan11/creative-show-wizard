@@ -96,6 +96,26 @@ export const translations = {
     },
     checkAvailability: { en: "Check availability", pl: "Sprawdź dostępność", is: "Athuga framboð" },
   },
+  websiteCta: {
+    tag: { en: "BUSINESS AUTOPILOT", pl: "BIZNES NA AUTOPILOCIE", is: "SJÁLFVIRK VIÐSKIPTI" },
+    title: { en: "Want a Website Like This", pl: "Chcesz taką stronę", is: "Viltu vefsíðu eins og þessa" },
+    titleAccent: { en: "For Your Business?", pl: "Dla Twojego biznesu?", is: "Fyrir þitt fyrirtæki?" },
+    subtitle: {
+      en: "We build stunning, personalised websites for guesthouses, hotels, and tourism businesses. Everything done for you — website, photos, ads, social media. One plan. Zero stress.",
+      pl: "Tworzymy piękne, spersonalizowane strony dla pensjonatów, hoteli i firm turystycznych. Wszystko zrobione za Ciebie — strona, zdjęcia, reklamy, social media. Jeden plan. Zero stresu.",
+      is: "Við smíðum fallegar, sérsniðnar vefsíður fyrir gistiheimili, hótel og ferðaþjónustu. Allt gert fyrir þig — vefsíða, myndir, auglýsingar, samfélagsmiðlar. Ein áætlun. Enginn streitingur.",
+    },
+    features: [
+      { en: "Custom Website", pl: "Strona na zamówienie", is: "Sérsniðin vefsíða" },
+      { en: "Professional Photos", pl: "Profesjonalne zdjęcia", is: "Fagmyndir" },
+      { en: "Social Media Ads", pl: "Reklamy w social media", is: "Auglýsingar á samfélagsmiðlum" },
+      { en: "All-In-One Plan", pl: "Pakiet All-In-One", is: "Allt-í-einu áætlun" },
+    ],
+    cta: { en: "Get Started", pl: "Rozpocznij", is: "Byrjaðu" },
+    price: { en: "From only", pl: "Już od", is: "Frá aðeins" },
+    priceAccent: { en: "19,990 ISK/month", pl: "19 990 ISK/mies.", is: "19.990 ISK/mán." },
+    badges: { en: "Live in 7 days · Fully personalised · No long-term contracts", pl: "Gotowe w 7 dni · W pełni spersonalizowane · Bez długich umów", is: "Tilbúið á 7 dögum · Fullkomlega sérsniðið · Engir langtímasamningar" },
+  },
   footer: {
     rights: { en: "© 2026 Fjallsýn Cottage. All rights reserved.", pl: "© 2026 Fjallsýn Cottage. Wszelkie prawa zastrzeżone.", is: "© 2026 Fjallsýn Cottage. Allur réttur áskilinn." },
   },
