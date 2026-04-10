@@ -219,9 +219,9 @@ export const translations = {
     title: { en: "Seasonal", pl: "Cennik", is: "Árstíðar" },
     titleAccent: { en: "Pricing", pl: "sezonowy", is: "verðlag" },
     subtitle: {
-      en: "Book directly and save 15–20% compared to Booking.com & Airbnb.",
-      pl: "Rezerwuj bezpośrednio i oszczędź 15–20% w porównaniu z Booking.com i Airbnb.",
-      is: "Bókaðu beint og sparaðu 15–20% miðað við Booking.com og Airbnb.",
+      en: "We believe in honesty — no hidden fees, no surprises. Here are our real prices, and you'll always pay less booking directly with us.",
+      pl: "Wierzymy w uczciwość — bez ukrytych opłat, bez niespodzianek. Oto nasze prawdziwe ceny, a rezerwując bezpośrednio zawsze zapłacisz mniej.",
+      is: "Við trúum á heiðarleika — engin falin gjöld, engar óvæntar overraskingar. Hér eru raunveruleg verð okkar, og þú borgar alltaf minna með beinni bókun.",
     },
     seasons: [
       {
