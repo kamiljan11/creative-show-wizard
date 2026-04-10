@@ -17,9 +17,9 @@ const InfoStrip = () => {
     <section className="py-4 md:py-6 border-y border-border bg-card/50">
       <div className="container mx-auto px-4 md:px-6">
         {/* Horizontal scroll on mobile */}
-        <div className="flex gap-6 md:gap-x-10 md:gap-y-4 md:flex-wrap md:justify-center overflow-x-auto snap-x snap-mandatory pb-1 md:pb-0 scrollbar-hide">
+        <div className="grid grid-cols-3 gap-4 md:flex md:gap-x-10 md:gap-y-4 md:flex-wrap md:justify-center">
           {items.map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-xs md:text-sm font-body snap-center shrink-0">
+            <div key={i} className="flex items-center gap-2 text-xs md:text-sm font-body">
               <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                 <item.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
               </div>
