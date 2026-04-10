@@ -59,9 +59,8 @@ const Gallery = () => {
           {/* Mobile: horizontal scroll gallery */}
           <div className="flex md:hidden gap-3 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide">
             {images.map((img, i) => (
-              <button
+              <div
                 key={i}
-                onClick={() => setLightbox(i)}
                 className="overflow-hidden rounded-lg border border-border shrink-0 w-[70vw] h-48 snap-center"
               >
                 <img
@@ -72,7 +71,7 @@ const Gallery = () => {
                   height={600}
                   className="w-full h-full object-cover"
                 />
-              </button>
+              </div>
             ))}
           </div>
 
