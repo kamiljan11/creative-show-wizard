@@ -59,9 +59,6 @@ const Index = () => (
       <ContactForm />
     </ScrollReveal>
     <ScrollReveal>
-      <BookingCTA />
-    </ScrollReveal>
-    <ScrollReveal>
       <WebsiteCTA />
     </ScrollReveal>
     <Footer />
