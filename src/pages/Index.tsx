@@ -17,7 +17,7 @@ import WebsiteCTA from "@/components/WebsiteCTA";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollReveal from "@/components/ScrollReveal";
-import { WaveDivider, DiamondSeparator } from "@/components/SvgDecorations";
+import { DiamondSeparator } from "@/components/SvgDecorations";
 
 const Index = () => (
   <div className="min-h-screen">
@@ -26,60 +26,46 @@ const Index = () => (
     <ScrollReveal>
       <InfoStrip />
     </ScrollReveal>
-
     <ScrollReveal>
       <HostStory />
     </ScrollReveal>
-
-    <WaveDivider className="text-primary my-2 md:my-6" />
-
     <ScrollReveal>
       <Rooms />
     </ScrollReveal>
 
-    <DiamondSeparator className="my-6 md:my-10" />
+    {/* bg-card → bg-background transition */}
+    <DiamondSeparator className="py-6 md:py-10" />
 
     <ScrollReveal>
       <Gallery />
     </ScrollReveal>
-
-    <WaveDivider className="text-primary my-2 md:my-6" />
-
     <ScrollReveal>
       <Experiences />
     </ScrollReveal>
-
-    <DiamondSeparator className="my-6 md:my-10" />
-
     <ScrollReveal>
       <Amenities />
     </ScrollReveal>
 
-    <WaveDivider className="text-primary my-2 md:my-6" />
-
+    {/* bg-background → bg-card transition */}
     <ScrollReveal>
       <Reviews />
     </ScrollReveal>
 
-    <DiamondSeparator className="my-6 md:my-10" />
+    <DiamondSeparator className="py-6 md:py-10" />
 
     <ScrollReveal>
       <SeasonalPricing />
     </ScrollReveal>
 
-    <WaveDivider className="text-primary my-2 md:my-6" />
-
+    {/* bg-background → bg-card transition */}
     <ScrollReveal>
       <Location />
     </ScrollReveal>
-
-    <DiamondSeparator className="my-6 md:my-10" />
-
     <ScrollReveal>
       <FAQ />
     </ScrollReveal>
 
-    <WaveDivider className="text-primary my-2 md:my-6" />
+    <DiamondSeparator className="py-6 md:py-10" />
 
     <ScrollReveal>
       <ContactForm />
