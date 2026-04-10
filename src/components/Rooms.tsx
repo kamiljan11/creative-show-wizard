@@ -29,7 +29,7 @@ const Rooms = () => {
           {t.rooms.list.map((room, i) => (
             <div
               key={room.name}
-              className="group rounded-lg overflow-hidden bg-secondary border border-border hover:border-primary/30 transition-all duration-500 min-w-[280px] w-[85vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
+              className="group flex flex-col rounded-lg overflow-hidden bg-secondary border border-border hover:border-primary/30 transition-all duration-500 min-w-[280px] w-[85vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
             >
               <div className="overflow-hidden h-48 md:h-64">
                 <img
