@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 
 /** Soft mountain silhouette divider — place between sections */
 export const MountainDivider = ({ className = "", flip = false }: { className?: string; flip?: boolean }) => (
@@ -126,21 +126,24 @@ export const DiamondSeparator = ({ className = "" }: { className?: string }) => 
 // ─── BACKGROUND PATTERNS ───────────────────────────────
 
 /** Topographic contour lines — great for dark sections */
-export const TopoBg = ({ className = "" }: { className?: string }) => (
-  <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} aria-hidden>
-    <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="topo" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-          <path d="M20 100C40 80 60 60 100 60C140 60 160 80 180 100" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.06" />
-          <path d="M10 140C40 120 70 100 100 100C130 100 160 120 190 140" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.04" />
-          <path d="M0 180C50 160 80 140 100 140C120 140 150 160 200 180" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.03" />
-          <path d="M30 40C50 20 70 10 100 10C130 10 150 20 170 40" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.05" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#topo)" />
-    </svg>
-  </div>
-);
+export const TopoBg = ({ className = "" }: { className?: string }) => {
+  const id = useId().replace(/:/g, "");
+  return (
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} aria-hidden>
+      <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id={`topo-${id}`} x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+            <path d="M20 100C40 80 60 60 100 60C140 60 160 80 180 100" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.06" />
+            <path d="M10 140C40 120 70 100 100 100C130 100 160 120 190 140" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.04" />
+            <path d="M0 180C50 160 80 140 100 140C120 140 150 160 200 180" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.03" />
+            <path d="M30 40C50 20 70 10 100 10C130 10 150 20 170 40" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.05" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill={`url(#topo-${id})`} />
+      </svg>
+    </div>
+  );
+};
 
 /** Subtle dot grid — clean, minimal texture */
 export const DotGridBg = ({ className = "" }: { className?: string }) => (
