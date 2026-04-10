@@ -11,6 +11,7 @@ import hotTub2 from "@/assets/hot-tub-2.jpg";
 import { Users, Maximize, Wifi, Bath, BedDouble, CheckCircle, ChevronLeft, ChevronRight, Droplets } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { useScrollDots } from "@/hooks/use-scroll-dots";
+import MobileCarouselNav from "@/components/MobileCarouselNav";
 import { StarFieldBg } from "@/components/SvgDecorations";
 
 const roomImages = [
@@ -149,18 +150,13 @@ const Rooms = () => {
           ))}
         </div>
 
-        <div className="flex md:hidden justify-center gap-2 mt-4">
-          {t.rooms.list.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => scrollTo(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === active ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
-              }`}
-              aria-label={`Go to room ${i + 1}`}
-            />
-          ))}
-        </div>
+        <MobileCarouselNav
+          active={active}
+          total={t.rooms.list.length}
+          labels={t.rooms.list.map(r => r.name)}
+          onPrev={() => scrollTo((active - 1 + t.rooms.list.length) % t.rooms.list.length)}
+          onNext={() => scrollTo((active + 1) % t.rooms.list.length)}
+        />
       </div>
     </section>
   );
