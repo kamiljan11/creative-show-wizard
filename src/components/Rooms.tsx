@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState } from "react";
 import roomCozy from "@/assets/room-cozy.jpg";
 import roomSuite2 from "@/assets/room-suite-2.jpg";
 import roomSuite3 from "@/assets/room-suite-3.jpg";
@@ -10,6 +10,7 @@ import roomFjord2 from "@/assets/room-fjord-2.jpg";
 import hotTub2 from "@/assets/hot-tub-2.jpg";
 import { Users, Maximize, Wifi, Bath, BedDouble, CheckCircle, ChevronLeft, ChevronRight, Droplets } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { useScrollDots } from "@/hooks/use-scroll-dots";
 
 const roomImages = [
   [roomCozy, roomSuite2, roomSuite3, hotTub],
@@ -75,24 +76,8 @@ const ImageSlider = ({ images, alt }: { images: string[]; alt: string }) => {
 
 const Rooms = () => {
   const { lang, t } = useLang();
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [activeCard, setActiveCard] = useState(0);
+  const { scrollRef, active, scrollTo } = useScrollDots(t.rooms.list.length);
 
-  const handleScroll = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const scrollLeft = el.scrollLeft;
-    const cardWidth = el.scrollWidth / t.rooms.list.length;
-    const index = Math.round(scrollLeft / cardWidth);
-    setActiveCard(Math.min(index, t.rooms.list.length - 1));
-  }, [t.rooms.list.length]);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", handleScroll, { passive: true });
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
   return (
     <section id="rooms" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4 md:px-6">
@@ -166,14 +151,9 @@ const Rooms = () => {
           {t.rooms.list.map((_, i) => (
             <button
               key={i}
-              onClick={() => {
-                const el = scrollRef.current;
-                if (!el) return;
-                const cardWidth = el.scrollWidth / t.rooms.list.length;
-                el.scrollTo({ left: cardWidth * i, behavior: "smooth" });
-              }}
+              onClick={() => scrollTo(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === activeCard ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
+                i === active ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
               }`}
               aria-label={`Go to room ${i + 1}`}
             />
