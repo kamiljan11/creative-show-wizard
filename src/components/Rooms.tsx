@@ -162,9 +162,21 @@ const Rooms = () => {
           ))}
         </div>
 
-        <div className="flex md:hidden justify-center gap-1.5 mt-4">
+        <div className="flex md:hidden justify-center gap-2 mt-4">
           {t.rooms.list.map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+            <button
+              key={i}
+              onClick={() => {
+                const el = scrollRef.current;
+                if (!el) return;
+                const cardWidth = el.scrollWidth / t.rooms.list.length;
+                el.scrollTo({ left: cardWidth * i, behavior: "smooth" });
+              }}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === activeCard ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
+              }`}
+              aria-label={`Go to room ${i + 1}`}
+            />
           ))}
         </div>
       </div>
