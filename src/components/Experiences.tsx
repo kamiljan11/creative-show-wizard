@@ -4,11 +4,13 @@ import hikingImg from "@/assets/experience-hiking.jpg";
 import hotspringImg from "@/assets/experience-hotspring.jpg";
 import { Calendar } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { useScrollDots } from "@/hooks/use-scroll-dots";
 
 const images = [auroraImg, whaleImg, hikingImg, hotspringImg];
 
 const Experiences = () => {
   const { lang, t } = useLang();
+  const { scrollRef, active, scrollTo } = useScrollDots(t.experiences.items.length);
 
   return (
     <section id="experiences" className="py-16 md:py-24">
@@ -21,12 +23,15 @@ const Experiences = () => {
           {t.experiences.subtitle[lang]}
         </p>
 
-        {/* Horizontal scroll on mobile */}
-        <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-auto md:px-0 scrollbar-hide">
+        <div
+          ref={scrollRef}
+          className="flex md:grid md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-auto md:px-0 scrollbar-hide"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
           {t.experiences.items.map((item, i) => (
             <div
               key={i}
-              className="group relative rounded-lg overflow-hidden h-56 md:h-72 border border-border hover:border-primary/30 transition-all duration-500 min-w-[260px] w-[80vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
+              className="group relative rounded-lg overflow-hidden h-56 md:h-72 border border-border hover:border-primary/30 transition-all duration-500 min-w-[260px] w-[85vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
             >
               <img
                 src={images[i]}
@@ -53,9 +58,16 @@ const Experiences = () => {
           ))}
         </div>
 
-        <div className="flex md:hidden justify-center gap-1.5 mt-4">
+        <div className="flex md:hidden justify-center gap-2 mt-4">
           {t.experiences.items.map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === active ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
+              }`}
+              aria-label={`Experience ${i + 1}`}
+            />
           ))}
         </div>
       </div>

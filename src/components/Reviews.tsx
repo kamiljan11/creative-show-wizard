@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { useScrollDots } from "@/hooks/use-scroll-dots";
 
 const reviews = [
   {
@@ -45,6 +46,7 @@ const platformColors: Record<string, string> = {
 
 const Reviews = () => {
   const { lang, t } = useLang();
+  const { scrollRef, active, scrollTo } = useScrollDots(reviews.length);
 
   return (
     <section id="reviews" className="py-16 md:py-24 bg-card">
@@ -56,7 +58,6 @@ const Reviews = () => {
           {t.reviews.subtitle[lang]}
         </p>
 
-        {/* Platform score badges - compact on mobile */}
         <div className="flex justify-center gap-3 md:gap-6 mb-8 md:mb-12">
           {Object.entries(t.reviews.platforms).map(([key, p]) => (
             <div key={key} className="flex items-center gap-2 text-xs md:text-sm font-body">
@@ -71,10 +72,13 @@ const Reviews = () => {
           ))}
         </div>
 
-        {/* Horizontal scroll on mobile */}
-        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-auto md:px-0 scrollbar-hide">
+        <div
+          ref={scrollRef}
+          className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-auto md:px-0 scrollbar-hide"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
           {reviews.map((r) => (
-            <div key={r.name} className="p-5 md:p-8 rounded-lg bg-secondary border border-border relative min-w-[270px] w-[80vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink">
+            <div key={r.name} className="p-5 md:p-8 rounded-lg bg-secondary border border-border relative min-w-[270px] w-[85vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink">
               <Quote className="w-6 h-6 md:w-8 md:h-8 text-primary/20 absolute top-4 right-4 md:top-6 md:right-6" />
               <div className="flex gap-1 mb-3 md:mb-4">
                 {Array.from({ length: r.rating }).map((_, i) => (
@@ -95,9 +99,16 @@ const Reviews = () => {
           ))}
         </div>
 
-        <div className="flex md:hidden justify-center gap-1.5 mt-4">
+        <div className="flex md:hidden justify-center gap-2 mt-4">
           {reviews.map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === active ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
+              }`}
+              aria-label={`Review ${i + 1}`}
+            />
           ))}
         </div>
       </div>

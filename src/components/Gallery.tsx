@@ -9,6 +9,7 @@ import aurora from "@/assets/experience-aurora.jpg";
 import hiking from "@/assets/experience-hiking.jpg";
 import { X } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { useScrollDots } from "@/hooks/use-scroll-dots";
 
 const images = [
   { src: heroImg, alt: "Fjallsýn Cottage exterior" },
@@ -24,6 +25,7 @@ const images = [
 const Gallery = () => {
   const { lang, t } = useLang();
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const { scrollRef, active, scrollTo } = useScrollDots(images.length);
 
   return (
     <>
@@ -34,7 +36,7 @@ const Gallery = () => {
             <span className="text-gradient-warm">{t.gallery.titleAccent[lang]}</span>
           </h2>
 
-          {/* Horizontal scroll on mobile, grid on desktop */}
+          {/* Desktop grid */}
           <div className="hidden md:grid grid-cols-4 gap-3 max-w-6xl mx-auto">
             {images.map((img, i) => (
               <button
@@ -56,12 +58,16 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Mobile: horizontal scroll gallery */}
-          <div className="flex md:hidden gap-3 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide">
+          {/* Mobile slider */}
+          <div
+            ref={scrollRef}
+            className="flex md:hidden gap-3 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
             {images.map((img, i) => (
               <div
                 key={i}
-                className="overflow-hidden rounded-lg border border-border shrink-0 w-[70vw] h-48 snap-center"
+                className="overflow-hidden rounded-lg border border-border shrink-0 w-[75vw] h-48 snap-center"
               >
                 <img
                   src={img.src}
@@ -75,9 +81,16 @@ const Gallery = () => {
             ))}
           </div>
 
-          <div className="flex md:hidden justify-center gap-1.5 mt-3">
+          <div className="flex md:hidden justify-center gap-2 mt-3">
             {images.map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+              <button
+                key={i}
+                onClick={() => scrollTo(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === active ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
+                }`}
+                aria-label={`Image ${i + 1}`}
+              />
             ))}
           </div>
         </div>

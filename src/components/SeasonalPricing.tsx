@@ -1,8 +1,10 @@
 import { useLang } from "@/i18n/LanguageContext";
 import { Badge } from "@/components/ui/badge";
+import { useScrollDots } from "@/hooks/use-scroll-dots";
 
 const SeasonalPricing = () => {
   const { lang, t } = useLang();
+  const { scrollRef, active, scrollTo } = useScrollDots(t.pricing.seasons.length);
 
   return (
     <section className="py-16 md:py-24">
@@ -15,12 +17,15 @@ const SeasonalPricing = () => {
           {t.pricing.subtitle[lang]}
         </p>
 
-        {/* Horizontal scroll on mobile */}
-        <div className="flex lg:grid lg:grid-cols-4 gap-4 md:gap-5 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory pb-4 lg:pb-0 -mx-4 px-4 lg:mx-auto lg:px-0 scrollbar-hide">
+        <div
+          ref={scrollRef}
+          className="flex lg:grid lg:grid-cols-4 gap-4 md:gap-5 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory pb-4 lg:pb-0 -mx-4 px-4 lg:mx-auto lg:px-0 scrollbar-hide"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
           {t.pricing.seasons.map((season, i) => (
             <div
               key={i}
-              className={`rounded-lg p-5 md:p-6 border transition-all duration-300 min-w-[220px] w-[70vw] sm:w-[45vw] lg:w-auto lg:min-w-0 snap-center shrink-0 lg:shrink ${
+              className={`rounded-lg p-5 md:p-6 border transition-all duration-300 min-w-[220px] w-[75vw] sm:w-[45vw] lg:w-auto lg:min-w-0 snap-center shrink-0 lg:shrink ${
                 i === 2
                   ? "border-primary/40 bg-primary/5 ring-1 ring-primary/20"
                   : "border-border bg-card hover:border-primary/20"
@@ -58,9 +63,16 @@ const SeasonalPricing = () => {
           ))}
         </div>
 
-        <div className="flex lg:hidden justify-center gap-1.5 mt-4">
+        <div className="flex lg:hidden justify-center gap-2 mt-4">
           {t.pricing.seasons.map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === active ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
+              }`}
+              aria-label={`Season ${i + 1}`}
+            />
           ))}
         </div>
 
