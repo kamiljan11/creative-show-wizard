@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import roomCozy from "@/assets/room-cozy.jpg";
 import roomSuite2 from "@/assets/room-suite-2.jpg";
 import roomSuite3 from "@/assets/room-suite-3.jpg";
@@ -75,7 +75,24 @@ const ImageSlider = ({ images, alt }: { images: string[]; alt: string }) => {
 
 const Rooms = () => {
   const { lang, t } = useLang();
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeCard, setActiveCard] = useState(0);
 
+  const handleScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollLeft = el.scrollLeft;
+    const cardWidth = el.scrollWidth / t.rooms.list.length;
+    const index = Math.round(scrollLeft / cardWidth);
+    setActiveCard(Math.min(index, t.rooms.list.length - 1));
+  }, [t.rooms.list.length]);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
   return (
     <section id="rooms" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4 md:px-6">
@@ -86,11 +103,15 @@ const Rooms = () => {
           {t.rooms.subtitle[lang]}
         </p>
 
-        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+        <div
+          ref={scrollRef}
+          className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
           {t.rooms.list.map((room, i) => (
             <div
               key={room.name}
-              className="group flex flex-col rounded-lg overflow-hidden bg-secondary border border-border hover:border-primary/30 transition-all duration-500 min-w-[280px] w-[85vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
+              className="group flex flex-col rounded-lg overflow-hidden bg-secondary border border-border hover:border-primary/30 transition-all duration-500 min-w-[280px] w-[90vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
             >
               <ImageSlider images={roomImages[i]} alt={room.name} />
 
@@ -141,9 +162,21 @@ const Rooms = () => {
           ))}
         </div>
 
-        <div className="flex md:hidden justify-center gap-1.5 mt-4">
+        <div className="flex md:hidden justify-center gap-2 mt-4">
           {t.rooms.list.map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+            <button
+              key={i}
+              onClick={() => {
+                const el = scrollRef.current;
+                if (!el) return;
+                const cardWidth = el.scrollWidth / t.rooms.list.length;
+                el.scrollTo({ left: cardWidth * i, behavior: "smooth" });
+              }}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === activeCard ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
+              }`}
+              aria-label={`Go to room ${i + 1}`}
+            />
           ))}
         </div>
       </div>
