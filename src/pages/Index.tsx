@@ -16,32 +16,54 @@ import BookingCTA from "@/components/BookingCTA";
 import WebsiteCTA from "@/components/WebsiteCTA";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const Index = () => (
   <div className="min-h-screen">
     <Navbar />
-    {/* 1. Emotional hook */}
     <Hero />
-    <InfoStrip />
-    {/* 2. Trust — meet the host early */}
-    <HostStory />
-    {/* 3. Product — what you get */}
-    <Rooms />
-    <Gallery />
-    <Experiences />
-    <Amenities />
-    {/* 4. Social proof */}
-    <Reviews />
-    <FeaturedOn />
-    {/* 5. Decision — pricing & logistics */}
-    <SeasonalPricing />
-    <Location />
-    <FAQ />
-    {/* 6. Action */}
-    <ContactForm />
-    <BookingCTA />
-    {/* 7. Meta */}
-    <WebsiteCTA />
+    <ScrollReveal>
+      <InfoStrip />
+    </ScrollReveal>
+    <ScrollReveal>
+      <HostStory />
+    </ScrollReveal>
+    <ScrollReveal>
+      <Rooms />
+    </ScrollReveal>
+    <ScrollReveal>
+      <Gallery />
+    </ScrollReveal>
+    <ScrollReveal>
+      <Experiences />
+    </ScrollReveal>
+    <ScrollReveal>
+      <Amenities />
+    </ScrollReveal>
+    <ScrollReveal>
+      <Reviews />
+    </ScrollReveal>
+    <ScrollReveal>
+      <FeaturedOn />
+    </ScrollReveal>
+    <ScrollReveal>
+      <SeasonalPricing />
+    </ScrollReveal>
+    <ScrollReveal>
+      <Location />
+    </ScrollReveal>
+    <ScrollReveal>
+      <FAQ />
+    </ScrollReveal>
+    <ScrollReveal>
+      <ContactForm />
+    </ScrollReveal>
+    <ScrollReveal>
+      <BookingCTA />
+    </ScrollReveal>
+    <ScrollReveal>
+      <WebsiteCTA />
+    </ScrollReveal>
     <Footer />
     <CookieConsent />
   </div>
