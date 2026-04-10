@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CalendarDays, Phone, Mail, MessageCircle, ShieldCheck, ExternalLink } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-
-const BOOKING_URL = "https://www.booking.com/hotel/is/fjallsyn-cottage.html";
-const AIRBNB_URL = "https://www.airbnb.com/rooms/fjallsyn-cottage";
+import DemoDialog from "@/components/DemoDialog";
 
 const BookingCTA = () => {
   const { lang, t } = useLang();
+  const [showDemo, setShowDemo] = useState(false);
+
+  const handleDemoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowDemo(true);
+  };
 
   return (
     <section id="contact" className="py-16 md:py-24">
@@ -23,7 +28,6 @@ const BookingCTA = () => {
               {t.booking.subtitle[lang]}
             </p>
 
-            {/* Two booking paths — like real Icelandic guesthouses */}
             <div className="flex flex-col gap-3 md:flex-row md:gap-4 justify-center mb-4 md:mb-6">
               <a href="#contact-form">
                 <Button size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body w-full md:w-auto">
@@ -31,31 +35,28 @@ const BookingCTA = () => {
                   {t.booking.checkAvailability[lang]}
                 </Button>
               </a>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full md:w-auto">
-                  Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
-                </Button>
-              </a>
-              <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full md:w-auto">
-                  Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
-                </Button>
-              </a>
+              <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full md:w-auto" onClick={handleDemoClick}>
+                Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
+              </Button>
+              <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full md:w-auto" onClick={handleDemoClick}>
+                Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
+              </Button>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center text-xs md:text-sm text-muted-foreground font-body pt-4 md:pt-6 border-t border-border/30">
-              <a href="tel:+3548881234" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
+              <button onClick={handleDemoClick} className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" /> +354 888 1234
-              </a>
-              <a href="mailto:info@fjallsyn.is" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
+              </button>
+              <button onClick={handleDemoClick} className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-3.5 h-3.5 md:w-4 md:h-4" /> info@fjallsyn.is
-              </a>
-              <a href="https://wa.me/3548881234" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
+              </button>
+              <button onClick={handleDemoClick} className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
                 <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4" /> WhatsApp
-              </a>
+              </button>
             </div>
           </div>
         </div>
+        <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
       </div>
     </section>
   );
