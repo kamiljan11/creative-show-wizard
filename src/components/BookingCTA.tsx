@@ -36,6 +36,11 @@ const BookingCTA = () => {
                   Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
                 </Button>
               </a>
+              <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full md:w-auto">
+                  Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
+                </Button>
+              </a>
             </div>
 
             <p className="text-[10px] md:text-xs text-primary/70 font-body mb-6 md:mb-8">
