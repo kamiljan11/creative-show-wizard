@@ -14,9 +14,9 @@ import { useScrollDots } from "@/hooks/use-scroll-dots";
 import { StarFieldBg } from "@/components/SvgDecorations";
 
 const roomImages = [
-  [roomCozy, roomSuite2, roomSuite3, hotTub],
+  [roomCozy, roomSuite2, roomSuite3, hotTub2],
   [roomGlacier, roomGlacier2, hotTub2],
-  [roomFjord, roomFjord2, hotTub],
+  [roomFjord, roomFjord2, hotTub2],
 ];
 
 const roomMeta = [
