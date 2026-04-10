@@ -11,7 +11,7 @@ const Location = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-card">
+    <section id="location" className="py-16 md:py-24 bg-card scroll-mt-16">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center mb-2 md:mb-4">
           {t.location.title[lang]}{" "}
