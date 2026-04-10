@@ -1,6 +1,5 @@
 import grandmaImg from "@/assets/grandma-1960s.jpg";
 import gudrunImg from "@/assets/host-gudrun-modern.jpg";
-import { Quote } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const HostStory = () => {
