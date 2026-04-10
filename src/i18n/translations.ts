@@ -254,7 +254,7 @@ export const translations = {
       },
     ],
     perNight: { en: "ISK/night", pl: "ISK/noc", is: "ISK/nótt" },
-    directSave: { en: "Direct booking — save 15%", pl: "Rezerwacja bezpośrednia — oszczędź 15%", is: "Bein bókun — sparaðu 15%" },
+    directSave: { en: "Best price when you book direct", pl: "Najlepsza cena przy rezerwacji bezpośredniej", is: "Besta verðið við beina bókun" },
   },
   faq: {
     title: { en: "Frequently Asked", pl: "Często zadawane", is: "Algengar" },

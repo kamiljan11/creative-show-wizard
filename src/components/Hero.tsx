@@ -60,9 +60,6 @@ const Hero = () => {
               </Button>
             </a>
           </div>
-          <p className="text-[10px] md:text-xs text-primary/70 font-body mt-2">
-            {t.pricing.directSave[lang]}
-          </p>
         </div>
       </div>
     </section>
