@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, CheckCircle, Tag, CalendarDays, Users, ChevronDown } from "lucide-react";
+import { Send, CheckCircle, CalendarDays, Users, ChevronDown } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const rooms = [
@@ -58,14 +58,6 @@ const ContactForm = () => {
           {t.contactForm.subtitle[lang]}
         </p>
 
-        <div className="flex justify-center mb-8 md:mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <Tag className="w-3.5 h-3.5 text-primary" />
-            <span className="text-xs md:text-sm text-primary font-body font-medium">
-              {t.pricing.directSave[lang]}
-            </span>
-          </div>
-        </div>
 
         <div className="max-w-2xl mx-auto">
           {/* Step 1: Check availability */}
