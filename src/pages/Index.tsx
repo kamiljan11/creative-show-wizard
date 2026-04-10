@@ -20,20 +20,27 @@ import CookieConsent from "@/components/CookieConsent";
 const Index = () => (
   <div className="min-h-screen">
     <Navbar />
+    {/* 1. Emotional hook */}
     <Hero />
     <InfoStrip />
-    <FeaturedOn />
+    {/* 2. Trust — meet the host early */}
+    <HostStory />
+    {/* 3. Product — what you get */}
     <Rooms />
+    <Gallery />
     <Experiences />
     <Amenities />
-    <HostStory />
-    <Gallery />
+    {/* 4. Social proof */}
     <Reviews />
+    <FeaturedOn />
+    {/* 5. Decision — pricing & logistics */}
     <SeasonalPricing />
     <Location />
     <FAQ />
+    {/* 6. Action */}
     <ContactForm />
     <BookingCTA />
+    {/* 7. Meta */}
     <WebsiteCTA />
     <Footer />
     <CookieConsent />
