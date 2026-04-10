@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState } from "react";
 import roomCozy from "@/assets/room-cozy.jpg";
 import roomSuite2 from "@/assets/room-suite-2.jpg";
 import roomSuite3 from "@/assets/room-suite-3.jpg";
@@ -10,6 +10,7 @@ import roomFjord2 from "@/assets/room-fjord-2.jpg";
 import hotTub2 from "@/assets/hot-tub-2.jpg";
 import { Users, Maximize, Wifi, Bath, BedDouble, CheckCircle, ChevronLeft, ChevronRight, Droplets } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { useScrollDots } from "@/hooks/use-scroll-dots";
 
 const roomImages = [
   [roomCozy, roomSuite2, roomSuite3, hotTub],
