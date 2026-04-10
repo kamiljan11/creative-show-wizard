@@ -7,6 +7,7 @@ export const translations = {
     reviews: { en: "Reviews", pl: "Opinie", is: "Umsagnir" },
     contact: { en: "Contact", pl: "Kontakt", is: "Hafa samband" },
     experiences: { en: "Experiences", pl: "Atrakcje", is: "Upplifanir" },
+    location: { en: "Location", pl: "Lokalizacja", is: "Staðsetning" },
     book: { en: "Book now", pl: "Rezerwuj", is: "Bóka" },
   },
   hero: {
