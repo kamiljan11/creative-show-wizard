@@ -30,7 +30,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setShowDemo(true);
   };
 
   if (sent) {
