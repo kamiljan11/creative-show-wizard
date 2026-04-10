@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 
 /** Soft mountain silhouette divider — place between sections */
 export const MountainDivider = ({ className = "", flip = false }: { className?: string; flip?: boolean }) => (
@@ -120,5 +120,96 @@ export const DiamondSeparator = ({ className = "" }: { className?: string }) => 
       <rect x="4" y="0" width="5.66" height="5.66" transform="rotate(45 4 4)" />
     </svg>
     <div className="h-px w-8 md:w-12 bg-primary/20" />
+  </div>
+);
+
+// ─── BACKGROUND PATTERNS ───────────────────────────────
+
+/** Topographic contour lines — great for dark sections */
+export const TopoBg = ({ className = "" }: { className?: string }) => {
+  const id = useId().replace(/:/g, "");
+  return (
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} aria-hidden>
+      <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id={`topo-${id}`} x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+            <path d="M20 100C40 80 60 60 100 60C140 60 160 80 180 100" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.06" />
+            <path d="M10 140C40 120 70 100 100 100C130 100 160 120 190 140" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.04" />
+            <path d="M0 180C50 160 80 140 100 140C120 140 150 160 200 180" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.03" />
+            <path d="M30 40C50 20 70 10 100 10C130 10 150 20 170 40" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.05" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill={`url(#topo-${id})`} />
+      </svg>
+    </div>
+  );
+};
+
+/** Subtle dot grid — clean, minimal texture */
+export const DotGridBg = ({ className = "" }: { className?: string }) => (
+  <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} aria-hidden>
+    <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="16" cy="16" r="0.8" fill="currentColor" opacity="0.08" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots)" />
+    </svg>
+  </div>
+);
+
+/** Diagonal hatching — for a hand-drawn/craft feel */
+export const HatchBg = ({ className = "" }: { className?: string }) => (
+  <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} aria-hidden>
+    <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hatch" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="16" stroke="currentColor" strokeWidth="0.4" opacity="0.05" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hatch)" />
+    </svg>
+  </div>
+);
+
+/** Aurora gradient glow — soft colored light at the top of a section */
+export const AuroraBg = ({ className = "" }: { className?: string }) => (
+  <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} aria-hidden>
+    <svg className="absolute top-0 left-0 w-full h-1/2" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="aurora1" cx="30%" cy="0%" r="60%">
+          <stop offset="0%" stopColor="hsl(160, 60%, 40%)" stopOpacity="0.06" />
+          <stop offset="100%" stopColor="transparent" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="aurora2" cx="70%" cy="0%" r="50%">
+          <stop offset="0%" stopColor="hsl(36, 60%, 50%)" stopOpacity="0.04" />
+          <stop offset="100%" stopColor="transparent" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="400" fill="url(#aurora1)" />
+      <rect width="1440" height="400" fill="url(#aurora2)" />
+    </svg>
+  </div>
+);
+
+/** Scattered stars — small random dots for a night sky feel */
+export const StarFieldBg = ({ className = "" }: { className?: string }) => (
+  <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`} aria-hidden>
+    <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="stars" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+          <circle cx="15" cy="25" r="0.6" fill="currentColor" opacity="0.12" />
+          <circle cx="85" cy="10" r="0.4" fill="currentColor" opacity="0.08" />
+          <circle cx="50" cy="55" r="0.5" fill="currentColor" opacity="0.10" />
+          <circle cx="105" cy="70" r="0.3" fill="currentColor" opacity="0.06" />
+          <circle cx="30" cy="95" r="0.5" fill="currentColor" opacity="0.09" />
+          <circle cx="75" cy="105" r="0.4" fill="currentColor" opacity="0.07" />
+          <circle cx="10" cy="65" r="0.3" fill="currentColor" opacity="0.05" />
+          <circle cx="95" cy="40" r="0.6" fill="currentColor" opacity="0.11" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#stars)" />
+    </svg>
   </div>
 );

@@ -1,14 +1,15 @@
 import grandmaImg from "@/assets/grandma-1960s.jpg";
 import gudrunImg from "@/assets/host-gudrun-modern.jpg";
 import { useLang } from "@/i18n/LanguageContext";
-import { NordicKnot } from "@/components/SvgDecorations";
+import { NordicKnot, TopoBg } from "@/components/SvgDecorations";
 
 const HostStory = () => {
   const { lang, t } = useLang();
 
   return (
-    <section className="py-16 md:py-24 bg-card">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="relative py-16 md:py-24 bg-card overflow-hidden">
+      <TopoBg className="text-primary" />
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-6 md:gap-10 items-center">
           {/* Photo collage — grandma + Guðrún */}
           <div className="md:col-span-2">
