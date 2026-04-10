@@ -1,6 +1,7 @@
 import grandmaImg from "@/assets/grandma-1960s.jpg";
 import gudrunImg from "@/assets/host-gudrun-modern.jpg";
 import { useLang } from "@/i18n/LanguageContext";
+import { NordicKnot } from "@/components/SvgDecorations";
 
 const HostStory = () => {
   const { lang, t } = useLang();
@@ -47,9 +48,12 @@ const HostStory = () => {
           </div>
 
           <div className="md:col-span-3 mt-8 md:mt-0">
-            <p className="text-primary font-body text-[10px] md:text-xs tracking-[0.25em] uppercase mb-3 md:mb-4">
-              {t.host.tag[lang]}
-            </p>
+            <div className="flex items-center gap-2 mb-3 md:mb-4">
+              <NordicKnot className="text-primary" />
+              <p className="text-primary font-body text-[10px] md:text-xs tracking-[0.25em] uppercase">
+                {t.host.tag[lang]}
+              </p>
+            </div>
             <h2 className="text-2xl md:text-4xl font-heading font-semibold leading-tight mb-1 md:mb-2">
               {t.host.title[lang]}
             </h2>
