@@ -4,6 +4,7 @@ import { MapPin, Star, ExternalLink } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const BOOKING_URL = "https://www.booking.com/hotel/is/fjallsyn-cottage.html";
+const AIRBNB_URL = "https://www.airbnb.com/rooms/fjallsyn-cottage";
 
 const Hero = () => {
   const { lang, t } = useLang();
@@ -51,6 +52,11 @@ const Hero = () => {
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto">
                 Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
+              </Button>
+            </a>
+            <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto">
+                Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
               </Button>
             </a>
           </div>

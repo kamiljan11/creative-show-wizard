@@ -3,6 +3,7 @@ import { CalendarDays, Phone, Mail, MessageCircle, ShieldCheck, ExternalLink } f
 import { useLang } from "@/i18n/LanguageContext";
 
 const BOOKING_URL = "https://www.booking.com/hotel/is/fjallsyn-cottage.html";
+const AIRBNB_URL = "https://www.airbnb.com/rooms/fjallsyn-cottage";
 
 const BookingCTA = () => {
   const { lang, t } = useLang();
@@ -33,6 +34,11 @@ const BookingCTA = () => {
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full md:w-auto">
                   Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
+                </Button>
+              </a>
+              <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="lg" className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full md:w-auto">
+                  Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
                 </Button>
               </a>
             </div>
