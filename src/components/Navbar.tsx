@@ -11,8 +11,8 @@ const Navbar = () => {
   const links = [
     { href: "#rooms", label: t.nav.rooms[lang] },
     { href: "#experiences", label: t.nav.experiences[lang] },
-    { href: "#amenities", label: t.nav.amenities[lang] },
     { href: "#reviews", label: t.nav.reviews[lang] },
+    { href: "#location", label: t.nav.location[lang] },
     { href: "#contact", label: t.nav.contact[lang] },
   ];
 
