@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import InfoStrip from "@/components/InfoStrip";
-import FeaturedOn from "@/components/FeaturedOn";
+
 import Rooms from "@/components/Rooms";
 import Experiences from "@/components/Experiences";
 import Amenities from "@/components/Amenities";
@@ -42,9 +42,6 @@ const Index = () => (
     </ScrollReveal>
     <ScrollReveal>
       <Reviews />
-    </ScrollReveal>
-    <ScrollReveal>
-      <FeaturedOn />
     </ScrollReveal>
     <ScrollReveal>
       <SeasonalPricing />
