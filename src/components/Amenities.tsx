@@ -1,5 +1,6 @@
 import { Flame, Wifi, Car, Mountain, Coffee, ShieldCheck, Bath, Utensils } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { Snowflake } from "@/components/SvgDecorations";
 
 const icons = [Flame, Bath, Wifi, Car, Mountain, Coffee, Utensils, ShieldCheck];
 
@@ -9,9 +10,13 @@ const Amenities = () => {
   return (
     <section id="amenities" className="py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center mb-2 md:mb-4">
-          {t.amenities.title[lang]} <span className="text-gradient-warm">{t.amenities.titleAccent[lang]}</span>
-        </h2>
+        <div className="flex items-center justify-center gap-2 mb-2 md:mb-4">
+          <Snowflake className="text-primary" />
+          <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center">
+            {t.amenities.title[lang]} <span className="text-gradient-warm">{t.amenities.titleAccent[lang]}</span>
+          </h2>
+          <Snowflake className="text-primary" />
+        </div>
         <p className="text-center text-muted-foreground font-body text-sm md:text-base mb-10 md:mb-16 max-w-lg mx-auto">
           {t.amenities.subtitle[lang]}
         </p>

@@ -4,6 +4,7 @@ import hikingImg from "@/assets/experience-hiking.jpg";
 import hotspringImg from "@/assets/experience-hotspring.jpg";
 import { Calendar } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { CompassAccent } from "@/components/SvgDecorations";
 import { useScrollDots } from "@/hooks/use-scroll-dots";
 
 const images = [auroraImg, whaleImg, hikingImg, hotspringImg];
@@ -15,10 +16,13 @@ const Experiences = () => {
   return (
     <section id="experiences" className="py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center mb-2 md:mb-4">
-          {t.experiences.title[lang]}{" "}
-          <span className="text-gradient-warm">{t.experiences.titleAccent[lang]}</span>
-        </h2>
+        <div className="flex items-center justify-center gap-2 mb-2 md:mb-4">
+          <CompassAccent className="text-primary" />
+          <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center">
+            {t.experiences.title[lang]}{" "}
+            <span className="text-gradient-warm">{t.experiences.titleAccent[lang]}</span>
+          </h2>
+        </div>
         <p className="text-center text-muted-foreground font-body text-sm md:text-base mb-10 md:mb-16 max-w-lg mx-auto">
           {t.experiences.subtitle[lang]}
         </p>
