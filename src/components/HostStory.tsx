@@ -59,13 +59,6 @@ const HostStory = () => {
             <p className="text-sm md:text-base text-muted-foreground font-body leading-relaxed mb-6 md:mb-8">
               {t.host.story[lang]}
             </p>
-            <div className="border-l-2 border-primary/30 pl-4 md:pl-6">
-              <Quote className="w-4 h-4 md:w-5 md:h-5 text-primary/40 mb-2" />
-              <p className="font-heading italic text-foreground/80 text-sm md:text-lg">
-                {t.host.quote[lang]}
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
