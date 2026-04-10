@@ -201,6 +201,7 @@ const ContactForm = () => {
             </form>
           )}
         </div>
+        <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
       </div>
     </section>
   );
