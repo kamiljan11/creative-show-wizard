@@ -29,7 +29,7 @@ const Rooms = () => {
           {t.rooms.list.map((room, i) => (
             <div
               key={room.name}
-              className="group rounded-lg overflow-hidden bg-secondary border border-border hover:border-primary/30 transition-all duration-500 min-w-[280px] w-[85vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
+              className="group flex flex-col rounded-lg overflow-hidden bg-secondary border border-border hover:border-primary/30 transition-all duration-500 min-w-[280px] w-[85vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
             >
               <div className="overflow-hidden h-48 md:h-64">
                 <img
@@ -41,9 +41,9 @@ const Rooms = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="p-4 md:p-6">
+              <div className="p-4 md:p-6 flex flex-col flex-1">
                 <h3 className="text-lg md:text-xl font-heading font-semibold mb-1 md:mb-2">{room.name}</h3>
-                <p className="text-xs md:text-sm text-muted-foreground font-body mb-3 md:mb-4">{room.desc[lang]}</p>
+                <p className="text-xs md:text-sm text-muted-foreground font-body mb-3 md:mb-4 min-h-[3.5rem] md:min-h-[4.5rem]">{room.desc[lang]}</p>
 
                 <div className="flex flex-wrap items-center gap-2 md:gap-3 text-xs text-muted-foreground font-body mb-2 md:mb-3">
                   <span className="flex items-center gap-1"><Users className="w-3 h-3" /> {roomMeta[i].guests} {t.rooms.guests[lang]}</span>
@@ -53,33 +53,29 @@ const Rooms = () => {
                   <span className="flex items-center gap-1"><Wifi className="w-3 h-3" /> Wi-Fi</span>
                 </div>
 
-                {(room.bathroom || room.bed) && (
-                  <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                    {room.bed && (
-                      <span className="inline-flex items-center gap-1 text-[10px] md:text-xs font-body bg-primary/10 text-primary px-2 py-0.5 md:px-2.5 md:py-1 rounded-full">
-                        <BedDouble className="w-3 h-3" /> {room.bed[lang]}
-                      </span>
-                    )}
-                    {room.bathroom && (
-                      <span className="inline-flex items-center gap-1 text-[10px] md:text-xs font-body bg-accent/10 text-accent-foreground px-2 py-0.5 md:px-2.5 md:py-1 rounded-full">
-                        <Bath className="w-3 h-3" /> {room.bathroom[lang]}
-                      </span>
-                    )}
-                  </div>
-                )}
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4 min-h-[1.75rem]">
+                  {room.bed && (
+                    <span className="inline-flex items-center gap-1 text-[10px] md:text-xs font-body bg-primary/10 text-primary px-2 py-0.5 md:px-2.5 md:py-1 rounded-full">
+                      <BedDouble className="w-3 h-3" /> {room.bed[lang]}
+                    </span>
+                  )}
+                  {room.bathroom && (
+                    <span className="inline-flex items-center gap-1 text-[10px] md:text-xs font-body bg-accent/10 text-accent-foreground px-2 py-0.5 md:px-2.5 md:py-1 rounded-full">
+                      <Bath className="w-3 h-3" /> {room.bathroom[lang]}
+                    </span>
+                  )}
+                </div>
 
                 <div className="flex items-center gap-1 text-[10px] md:text-xs text-primary/70 font-body mb-3 md:mb-4">
                   <CheckCircle className="w-3 h-3" />
                   {t.rooms.breakfastIncluded[lang]}
                 </div>
 
-                <div className="flex items-end justify-between">
-                  <div>
-                    <span className="text-xl md:text-2xl font-heading font-bold text-primary">
-                      {roomMeta[i].price ?? t.rooms.included[lang]}
-                    </span>
-                    {roomMeta[i].price && <span className="text-[10px] md:text-xs text-muted-foreground ml-1">{t.rooms.perNight[lang]}</span>}
-                  </div>
+                <div className="mt-auto">
+                  <span className="text-xl md:text-2xl font-heading font-bold text-primary">
+                    {roomMeta[i].price ?? t.rooms.included[lang]}
+                  </span>
+                  {roomMeta[i].price && <span className="text-[10px] md:text-xs text-muted-foreground ml-1">{t.rooms.perNight[lang]}</span>}
                 </div>
               </div>
             </div>
