@@ -59,10 +59,6 @@ const Hero = () => {
                 Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
               </Button>
             </a>
-          </div>
-          <p className="text-[10px] md:text-xs text-primary/70 font-body mt-2">
-            {t.pricing.directSave[lang]}
-          </p>
         </div>
       </div>
     </section>

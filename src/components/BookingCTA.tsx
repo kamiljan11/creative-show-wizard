@@ -43,10 +43,6 @@ const BookingCTA = () => {
               </a>
             </div>
 
-            <p className="text-[10px] md:text-xs text-primary/70 font-body mb-6 md:mb-8">
-              {t.pricing.directSave[lang]}
-            </p>
-
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center text-xs md:text-sm text-muted-foreground font-body pt-4 md:pt-6 border-t border-border/30">
               <a href="tel:+3548881234" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" /> +354 888 1234
