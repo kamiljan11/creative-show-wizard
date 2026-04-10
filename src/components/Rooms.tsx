@@ -103,11 +103,15 @@ const Rooms = () => {
           {t.rooms.subtitle[lang]}
         </p>
 
-        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+        <div
+          ref={scrollRef}
+          className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
           {t.rooms.list.map((room, i) => (
             <div
               key={room.name}
-              className="group flex flex-col rounded-lg overflow-hidden bg-secondary border border-border hover:border-primary/30 transition-all duration-500 min-w-[280px] w-[85vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
+              className="group flex flex-col rounded-lg overflow-hidden bg-secondary border border-border hover:border-primary/30 transition-all duration-500 min-w-[280px] w-[90vw] md:w-auto md:min-w-0 snap-center shrink-0 md:shrink"
             >
               <ImageSlider images={roomImages[i]} alt={room.name} />
 
