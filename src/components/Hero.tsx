@@ -3,11 +3,17 @@ import heroCabin from "@/assets/hero-cabin.jpg";
 import { Button } from "@/components/ui/button";
 import { MapPin, Star, ExternalLink } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-import DemoDialog from "@/components/DemoDialog";
+import DemoDialog, { type DemoContext } from "@/components/DemoDialog";
 
 const Hero = () => {
   const { lang, t } = useLang();
   const [showDemo, setShowDemo] = useState(false);
+  const [demoCtx, setDemoCtx] = useState<DemoContext>("generic");
+
+  const openDemo = (ctx: DemoContext) => {
+    setDemoCtx(ctx);
+    setShowDemo(true);
+  };
 
   return (
     <section className="relative min-h-[85vh] md:min-h-screen flex items-end pb-12 md:pb-20 overflow-hidden">
@@ -49,16 +55,16 @@ const Hero = () => {
                 {t.hero.bookNow[lang]}
               </Button>
             </a>
-            <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto" onClick={() => setShowDemo(true)}>
+            <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto" onClick={() => openDemo("booking.com")}>
               Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto" onClick={() => setShowDemo(true)}>
+            <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto" onClick={() => openDemo("airbnb")}>
               Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
             </Button>
           </div>
         </div>
       </div>
-      <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
+      <DemoDialog open={showDemo} onOpenChange={setShowDemo} context={demoCtx} />
     </section>
   );
 };

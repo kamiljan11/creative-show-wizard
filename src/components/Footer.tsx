@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { MapPin, Instagram, Facebook, Phone, Mail, ExternalLink } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-import DemoDialog from "@/components/DemoDialog";
+import DemoDialog, { type DemoContext } from "@/components/DemoDialog";
 
 const Footer = () => {
   const { lang, t } = useLang();
   const [showDemo, setShowDemo] = useState(false);
+  const [demoCtx, setDemoCtx] = useState<DemoContext>("generic");
 
-  const handleDemoClick = (e: React.MouseEvent) => {
+  const openDemo = (ctx: DemoContext) => (e: React.MouseEvent) => {
     e.preventDefault();
+    setDemoCtx(ctx);
     setShowDemo(true);
   };
 
@@ -22,10 +24,10 @@ const Footer = () => {
               <MapPin className="w-3 h-3" /> Vestfjörðar, Ísland
             </p>
             <div className="flex items-center gap-4">
-              <button onClick={handleDemoClick} className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+              <button onClick={openDemo("instagram")} className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </button>
-              <button onClick={handleDemoClick} className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
+              <button onClick={openDemo("facebook")} className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </button>
             </div>
@@ -34,13 +36,13 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold mb-2 md:mb-3 text-xs md:text-sm">{t.nav.contact[lang]}</h4>
             <div className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground font-body">
-              <button onClick={handleDemoClick} className="flex items-center gap-2 hover:text-primary transition-colors">
+              <button onClick={openDemo("phone")} className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-3 h-3" /> +354 888 1234
               </button>
-              <button onClick={handleDemoClick} className="flex items-center gap-2 hover:text-primary transition-colors">
+              <button onClick={openDemo("email")} className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-3 h-3" /> info@fjallsyn.is
               </button>
-              <button onClick={handleDemoClick} className="flex items-center gap-2 hover:text-primary transition-colors">
+              <button onClick={openDemo("whatsapp")} className="flex items-center gap-2 hover:text-primary transition-colors">
                 WhatsApp
               </button>
             </div>
@@ -87,7 +89,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
+      <DemoDialog open={showDemo} onOpenChange={setShowDemo} context={demoCtx} />
     </footer>
   );
 };
