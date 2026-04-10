@@ -1,7 +1,7 @@
 import { Star, Quote } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { useScrollDots } from "@/hooks/use-scroll-dots";
-import { AuroraWisp } from "@/components/SvgDecorations";
+import { AuroraWisp, AuroraBg } from "@/components/SvgDecorations";
 
 const reviews = [
   {
@@ -50,8 +50,9 @@ const Reviews = () => {
   const { scrollRef, active, scrollTo } = useScrollDots(reviews.length);
 
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-card">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="reviews" className="relative py-16 md:py-24 bg-card overflow-hidden">
+      <AuroraBg />
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center mb-1 md:mb-2">
           {t.reviews.title[lang]} <span className="text-gradient-warm">{t.reviews.titleAccent[lang]}</span>
         </h2>

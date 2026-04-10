@@ -11,6 +11,7 @@ import hotTub2 from "@/assets/hot-tub-2.jpg";
 import { Users, Maximize, Wifi, Bath, BedDouble, CheckCircle, ChevronLeft, ChevronRight, Droplets } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { useScrollDots } from "@/hooks/use-scroll-dots";
+import { StarFieldBg } from "@/components/SvgDecorations";
 
 const roomImages = [
   [roomCozy, roomSuite2, roomSuite3, hotTub],
@@ -79,8 +80,9 @@ const Rooms = () => {
   const { scrollRef, active, scrollTo } = useScrollDots(t.rooms.list.length);
 
   return (
-    <section id="rooms" className="py-16 md:py-24 bg-card">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="rooms" className="relative py-16 md:py-24 bg-card overflow-hidden">
+      <StarFieldBg className="text-primary" />
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center mb-2 md:mb-4">
           {t.rooms.title[lang]} <span className="text-gradient-warm">{t.rooms.titleAccent[lang]}</span>
         </h2>

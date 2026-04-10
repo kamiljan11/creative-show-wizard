@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send, CheckCircle, CalendarDays, Users, ChevronDown } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import DemoDialog, { type DemoContext } from "@/components/DemoDialog";
+import { HatchBg } from "@/components/SvgDecorations";
 
 const rooms = [
   { name: "Eldvörp Suite", price: "24 900", available: true },
@@ -52,8 +53,9 @@ const ContactForm = () => {
   }
 
   return (
-    <section id="contact-form" className="py-16 md:py-24 scroll-mt-16">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="contact-form" className="relative py-16 md:py-24 scroll-mt-16 overflow-hidden">
+      <HatchBg className="text-primary" />
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <h2 className="text-3xl md:text-5xl font-heading font-semibold text-center mb-2 md:mb-4">
           {t.contactForm.title[lang]}{" "}
           <span className="text-gradient-warm">{t.contactForm.titleAccent[lang]}</span>
