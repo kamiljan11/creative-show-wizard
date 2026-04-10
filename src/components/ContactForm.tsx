@@ -21,6 +21,7 @@ const ContactForm = () => {
   const [guests, setGuests] = useState("2");
   const [checked, setChecked] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
+  const [showDemo, setShowDemo] = useState(false);
 
   const handleCheck = (e: React.FormEvent) => {
     e.preventDefault();
