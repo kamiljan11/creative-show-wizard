@@ -2,7 +2,7 @@ import { useState } from "react";
 import heroImg from "@/assets/hero-cabin.jpg";
 import roomCozy from "@/assets/room-cozy.jpg";
 import roomGlacier from "@/assets/room-glacier.jpg";
-import hotTub from "@/assets/hot-tub.jpg";
+import hotTub from "@/assets/hot-tub-2.jpg";
 import waterfall from "@/assets/gallery-waterfall.jpg";
 import breakfast from "@/assets/gallery-breakfast.jpg";
 import aurora from "@/assets/experience-aurora.jpg";
