@@ -9,7 +9,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const flags: Record<Lang, string> = { en: "🇬🇧", pl: "🇵🇱", is: "🇮🇸" };
 const labels: Record<Lang, string> = { en: "EN", pl: "PL", is: "IS" };
 
 const LanguageSwitcher = () => {
