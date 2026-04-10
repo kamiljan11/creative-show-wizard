@@ -11,6 +11,7 @@ import breakfast from "@/assets/gallery-breakfast.jpg";
 import { X } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { useScrollDots } from "@/hooks/use-scroll-dots";
+import MobileCarouselNav from "@/components/MobileCarouselNav";
 
 const images = [
   { src: heroImg, alt: "Fjallsýn Cottage exterior" },
@@ -83,18 +84,12 @@ const Gallery = () => {
             ))}
           </div>
 
-          <div className="flex md:hidden justify-center gap-2 mt-3">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => scrollTo(i)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === active ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
-                }`}
-                aria-label={`Image ${i + 1}`}
-              />
-            ))}
-          </div>
+          <MobileCarouselNav
+            active={active}
+            total={images.length}
+            onPrev={() => scrollTo((active - 1 + images.length) % images.length)}
+            onNext={() => scrollTo((active + 1) % images.length)}
+          />
         </div>
       </section>
 

@@ -6,6 +6,7 @@ import { Calendar } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { CompassAccent } from "@/components/SvgDecorations";
 import { useScrollDots } from "@/hooks/use-scroll-dots";
+import MobileCarouselNav from "@/components/MobileCarouselNav";
 
 const images = [auroraImg, whaleImg, hikingImg, hotspringImg];
 
@@ -62,18 +63,13 @@ const Experiences = () => {
           ))}
         </div>
 
-        <div className="flex md:hidden justify-center gap-2 mt-4">
-          {t.experiences.items.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => scrollTo(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === active ? "w-4 bg-primary" : "w-1.5 bg-primary/30"
-              }`}
-              aria-label={`Experience ${i + 1}`}
-            />
-          ))}
-        </div>
+        <MobileCarouselNav
+          active={active}
+          total={t.experiences.items.length}
+          labels={t.experiences.items.map(item => item.title[lang])}
+          onPrev={() => scrollTo((active - 1 + t.experiences.items.length) % t.experiences.items.length)}
+          onNext={() => scrollTo((active + 1) % t.experiences.items.length)}
+        />
       </div>
     </section>
   );
