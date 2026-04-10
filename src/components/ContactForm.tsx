@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, CheckCircle, CalendarDays, Users, ChevronDown } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-import DemoDialog from "@/components/DemoDialog";
+import DemoDialog, { type DemoContext } from "@/components/DemoDialog";
 
 const rooms = [
   { name: "Eldvörp Suite", price: "24 900", available: true },
@@ -22,6 +22,7 @@ const ContactForm = () => {
   const [checked, setChecked] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const [showDemo, setShowDemo] = useState(false);
+  const [demoCtx, setDemoCtx] = useState<DemoContext>("contact-form");
 
   const handleCheck = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +31,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setDemoCtx("contact-form");
     setShowDemo(true);
   };
 
@@ -201,7 +203,7 @@ const ContactForm = () => {
             </form>
           )}
         </div>
-        <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
+        <DemoDialog open={showDemo} onOpenChange={setShowDemo} context={demoCtx} />
       </div>
     </section>
   );
