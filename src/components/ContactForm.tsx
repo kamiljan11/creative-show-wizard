@@ -9,7 +9,7 @@ import DemoDialog, { type DemoContext } from "@/components/DemoDialog";
 const rooms = [
   { name: "Eldvörp Suite", price: "24 900", available: true },
   { name: "Jökull Room", price: "19 900", available: true },
-  { name: "Hot Tub Cottage", price: null, available: false },
+  { name: "Fjörður Room", price: "16 900", available: true },
 ];
 
 const ContactForm = () => {

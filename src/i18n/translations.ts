@@ -38,9 +38,9 @@ export const translations = {
     title: { en: "Where you'll", pl: "Gdzie", is: "Hvar þú" },
     titleAccent: { en: "sleep", pl: "zaśniesz", is: "sefur" },
     subtitle: {
-      en: "Two rooms, each with a story. My grandfather built the original walls. I added the rest — warmth, comfort, and a view that never gets old. Breakfast from our neighbour's farm is always included.",
-      pl: "Dwa pokoje, każdy z własną historią. Mój dziadek zbudował oryginalne ściany. Ja dodałam resztę — ciepło, komfort i widok, który nigdy się nie nudzi. Śniadanie z farmy sąsiada zawsze w cenie.",
-      is: "Tvö herbergi, hvert með sína sögu. Afi minn byggði upprunalegu veggina. Ég bætti við restinni — hlýju, þægindum og útsýni sem aldrei verður leiðinlegt. Morgunverður frá nágrannabunum er alltaf innifalinn.",
+      en: "Three spaces, each with a story. My grandfather built the original walls. I added the rest — warmth, comfort, and a view that never gets old. All guests share the outdoor hot tub and breakfast from our neighbour's farm.",
+      pl: "Trzy przestrzenie, każda z własną historią. Mój dziadek zbudował oryginalne ściany. Ja dodałam resztę — ciepło, komfort i widok, który nigdy się nie nudzi. Wszyscy goście korzystają z gorącej bali na zewnątrz i śniadania z farmy sąsiada.",
+      is: "Þrjú rými, hvert með sína sögu. Afi minn byggði upprunalegu veggina. Ég bætti við restinni — hlýju, þægindum og útsýni sem aldrei verður leiðinlegt. Allir gestir deila heita pottinum og morgunverði frá nágrannabunum.",
     },
     guests: { en: "guests", pl: "os.", is: "gestir" },
     perNight: { en: "ISK / night", pl: "ISK / noc", is: "ISK / nótt" },
@@ -49,6 +49,11 @@ export const translations = {
       en: "Breakfast, Wi-Fi & tea/coffee always included",
       pl: "Śniadanie, Wi-Fi i herbata/kawa zawsze w cenie",
       is: "Morgunverður, Wi-Fi og te/kaffi alltaf innifalið",
+    },
+    hotTubShared: {
+      en: "Outdoor hot tub access included",
+      pl: "Dostęp do gorącej bali w cenie",
+      is: "Aðgangur að heitum potti innifalinn",
     },
     list: [
       {
@@ -74,15 +79,15 @@ export const translations = {
         sqm: "38",
       },
       {
-        name: "Hot Tub & Relax",
+        name: "Fjörður Room",
         desc: {
-          en: "The hot tub sits where my grandmother used to hang laundry. Now it's where guests watch the northern lights with a beer. Towels and robes provided.",
-          pl: "Gorąca balia stoi tam, gdzie moja babcia suszyła pranie. Teraz to miejsce, gdzie goście oglądają zorzę polarną z piwem. Ręczniki i szlafroki zapewnione.",
-          is: "Heiti potturinn stendur þar sem amma mín hengdi upp þvottinn. Nú horfa gestir á norðurljósin með bjór. Handklæði og sloppar fylgja.",
+          en: "The fjord room. Tucked under the eaves with twin beds and a reading nook. My favourite spot for morning coffee — the light hits the water just right.",
+          pl: "Pokój fiordowy. Schowany pod okapem z dwoma łóżkami i kącikiem do czytania. Moje ulubione miejsce na poranną kawę — światło idealnie odbija się od wody.",
+          is: "Fjarðarherbergið. Undir þakbrúninni með tvö rúm og leskrók. Uppáhalds staðurinn minn fyrir morgunkaffi — ljósið lendir einmitt á vatninu.",
         },
-        bathroom: null,
-        bed: null,
-        sqm: null,
+        bathroom: { en: "Shared bathroom", pl: "Wspólna łazienka", is: "Sameiginlegt baðherbergi" },
+        bed: { en: "Twin beds", pl: "Dwa łóżka", is: "Tvö einbreitt rúm" },
+        sqm: "28",
       },
     ],
   },
