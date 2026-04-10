@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, CheckCircle, CalendarDays, Users, ChevronDown } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import DemoDialog from "@/components/DemoDialog";
 
 const rooms = [
   { name: "Eldvörp Suite", price: "24 900", available: true },
@@ -20,6 +21,7 @@ const ContactForm = () => {
   const [guests, setGuests] = useState("2");
   const [checked, setChecked] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
+  const [showDemo, setShowDemo] = useState(false);
 
   const handleCheck = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setShowDemo(true);
   };
 
   if (sent) {
@@ -199,6 +201,7 @@ const ContactForm = () => {
             </form>
           )}
         </div>
+        <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
       </div>
     </section>
   );
