@@ -14,7 +14,7 @@ const WebsiteCTA = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 border-t border-border">
+    <section id="website-cta" className="py-16 md:py-24 border-t border-border scroll-mt-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-primary font-body text-[10px] md:text-sm tracking-[0.25em] uppercase mb-4 md:mb-6">
