@@ -60,6 +60,7 @@ const HostStory = () => {
               {t.host.story[lang]}
             </p>
           </div>
+        </div>
       </div>
     </section>
   );
