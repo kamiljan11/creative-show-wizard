@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import roomCozy from "@/assets/room-cozy.jpg";
 import roomSuite2 from "@/assets/room-suite-2.jpg";
 import roomSuite3 from "@/assets/room-suite-3.jpg";
