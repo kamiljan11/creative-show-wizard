@@ -75,7 +75,24 @@ const ImageSlider = ({ images, alt }: { images: string[]; alt: string }) => {
 
 const Rooms = () => {
   const { lang, t } = useLang();
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeCard, setActiveCard] = useState(0);
 
+  const handleScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollLeft = el.scrollLeft;
+    const cardWidth = el.scrollWidth / t.rooms.list.length;
+    const index = Math.round(scrollLeft / cardWidth);
+    setActiveCard(Math.min(index, t.rooms.list.length - 1));
+  }, [t.rooms.list.length]);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
   return (
     <section id="rooms" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4 md:px-6">
