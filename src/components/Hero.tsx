@@ -50,10 +50,13 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-            <a href="#contact-form">
+            <a href="#contact-form" className="flex flex-col items-center sm:items-start">
               <Button size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body w-full sm:w-auto">
                 {t.hero.bookNow[lang]}
               </Button>
+              <span className="text-[10px] md:text-xs text-primary/80 font-body mt-1.5 tracking-wide">
+                {t.hero.bookDirect[lang]}
+              </span>
             </a>
             <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto" onClick={() => openDemo("booking.com")}>
               Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
