@@ -1,13 +1,13 @@
+import { useState } from "react";
 import heroCabin from "@/assets/hero-cabin.jpg";
 import { Button } from "@/components/ui/button";
 import { MapPin, Star, ExternalLink } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-
-const BOOKING_URL = "https://www.booking.com/hotel/is/fjallsyn-cottage.html";
-const AIRBNB_URL = "https://www.airbnb.com/rooms/fjallsyn-cottage";
+import DemoDialog from "@/components/DemoDialog";
 
 const Hero = () => {
   const { lang, t } = useLang();
+  const [showDemo, setShowDemo] = useState(false);
 
   return (
     <section className="relative min-h-[85vh] md:min-h-screen flex items-end pb-12 md:pb-20 overflow-hidden">
@@ -49,19 +49,16 @@ const Hero = () => {
                 {t.hero.bookNow[lang]}
               </Button>
             </a>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto">
-                Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
-              </Button>
-            </a>
-            <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto">
-                Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
-              </Button>
-            </a>
+            <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto" onClick={() => setShowDemo(true)}>
+              Booking.com <ExternalLink className="w-3.5 h-3.5 ml-2" />
+            </Button>
+            <Button variant="outline" size="lg" className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-body border-foreground/20 w-full sm:w-auto" onClick={() => setShowDemo(true)}>
+              Airbnb <ExternalLink className="w-3.5 h-3.5 ml-2" />
+            </Button>
           </div>
         </div>
       </div>
+      <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
     </section>
   );
 };
