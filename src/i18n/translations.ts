@@ -235,6 +235,7 @@ export const translations = {
         months: { en: "Nov – Mar", pl: "Lis – Mar", is: "Nóv – Mar" },
         eldvorp: "19 900",
         jokull: "14 900",
+        fjordur: "12 900",
         note: { en: "Aurora season. Fewer guests, more silence.", pl: "Sezon zorzy. Mniej gości, więcej ciszy.", is: "Norðurljósatímabil. Færri gestir, meiri þögn." },
       },
       {
@@ -242,6 +243,7 @@ export const translations = {
         months: { en: "Apr – May", pl: "Kwi – Maj", is: "Apr – Maí" },
         eldvorp: "22 900",
         jokull: "17 900",
+        fjordur: "14 900",
         note: { en: "Puffins return. Waterfalls at full force.", pl: "Maskonury wracają. Wodospady pełną mocą.", is: "Lundinn kemur aftur. Fossar í fullum krafti." },
       },
       {
@@ -249,6 +251,7 @@ export const translations = {
         months: { en: "Jun – Aug", pl: "Cze – Sie", is: "Jún – Ágú" },
         eldvorp: "29 900",
         jokull: "24 900",
+        fjordur: "19 900",
         note: { en: "Midnight sun. It never gets dark. Book early.", pl: "Słońce o północy. Nigdy nie robi się ciemno. Rezerwuj wcześniej.", is: "Miðnætursól. Aldrei verður myrkur. Bókaðu snemma." },
       },
       {
@@ -256,6 +259,7 @@ export const translations = {
         months: { en: "Sep – Oct", pl: "Wrz – Paź", is: "Sep – Okt" },
         eldvorp: "22 900",
         jokull: "17 900",
+        fjordur: "14 900",
         note: { en: "The hills turn gold. My favourite season.", pl: "Wzgórza złocą się. Moja ulubiona pora roku.", is: "Hæðirnar verða gullar. Uppáhalds árstíðin mín." },
       },
     ],

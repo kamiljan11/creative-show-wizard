@@ -44,6 +44,13 @@ const SeasonalPricing = () => {
                     <span className="text-[10px] md:text-xs text-muted-foreground font-body ml-1">{t.pricing.perNight[lang]}</span>
                   </p>
                 </div>
+                <div>
+                  <span className="text-[10px] md:text-xs text-muted-foreground font-body">Fjörður Room</span>
+                  <p className="text-lg md:text-xl font-heading font-semibold text-foreground/80">
+                    {season.fjordur}
+                    <span className="text-[10px] md:text-xs text-muted-foreground font-body ml-1">{t.pricing.perNight[lang]}</span>
+                  </p>
+                </div>
               </div>
 
               <p className="text-[10px] md:text-xs text-muted-foreground font-body italic">{season.note[lang]}</p>
