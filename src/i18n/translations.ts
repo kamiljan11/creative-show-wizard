@@ -300,9 +300,9 @@ export const translations = {
     title: { en: "Book directly —", pl: "Zarezerwuj bezpośrednio —", is: "Bókaðu beint —" },
     titleAccent: { en: "best price guarantee", pl: "gwarancja najniższej ceny", is: "besta verðtryggingin" },
     subtitle: {
-      en: "Book with us directly and pay less than on Booking.com or Airbnb. No middlemen, no hidden fees. From human to human.",
-      pl: "Rezerwując u nas bezpośrednio, płacisz mniej niż na Booking.com czy Airbnb. Bez pośredników, bez ukrytych opłat. Od człowieka do człowieka.",
-      is: "Bókaðu beint hjá okkur og borgaðu minna en á Booking.com eða Airbnb. Engir milliliðir, engin falin gjöld. Frá manneskju til manneskju.",
+      en: "Book with us directly and pay less than on Booking.com or Airbnb.",
+      pl: "Rezerwując u nas bezpośrednio, płacisz mniej niż na Booking.com czy Airbnb.",
+      is: "Bókaðu beint hjá okkur og borgaðu minna en á Booking.com eða Airbnb.",
     },
     checkAvailability: { en: "Check availability", pl: "Sprawdź dostępność", is: "Athuga framboð" },
     whatsapp: { en: "Chat on WhatsApp", pl: "Napisz na WhatsApp", is: "Spjallaðu á WhatsApp" },
