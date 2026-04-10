@@ -1,25 +1,27 @@
 import { useState } from "react";
 import heroImg from "@/assets/hero-cabin.jpg";
-import roomCozy from "@/assets/room-cozy.jpg";
-import roomGlacier from "@/assets/room-glacier.jpg";
-import hotTub from "@/assets/hot-tub-2.jpg";
+import breakfastPeople from "@/assets/gallery-breakfast-people.jpg";
+import hottubCouple from "@/assets/gallery-hottub-couple.jpg";
+import auroraP from "@/assets/gallery-aurora-person.jpg";
+import hikingPeople from "@/assets/gallery-hiking-people.jpg";
+import hotspringPerson from "@/assets/gallery-hotspring-person.jpg";
+import cozyReading from "@/assets/gallery-cozy-reading.jpg";
 import waterfall from "@/assets/gallery-waterfall.jpg";
 import breakfast from "@/assets/gallery-breakfast.jpg";
-import aurora from "@/assets/experience-aurora.jpg";
-import hiking from "@/assets/experience-hiking.jpg";
 import { X } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { useScrollDots } from "@/hooks/use-scroll-dots";
 
 const images = [
   { src: heroImg, alt: "Fjallsýn Cottage exterior" },
-  { src: roomCozy, alt: "Eldvörp Suite" },
-  { src: roomGlacier, alt: "Jökull Room" },
-  { src: hotTub, alt: "Hot Tub" },
+  { src: auroraP, alt: "Watching the Northern Lights from the porch" },
+  { src: breakfastPeople, alt: "Couple enjoying Icelandic breakfast" },
+  { src: hottubCouple, alt: "Couple relaxing in the hot tub" },
+  { src: hikingPeople, alt: "Hiking the Westfjords trails" },
+  { src: cozyReading, alt: "Reading by the fireplace" },
+  { src: hotspringPerson, alt: "Natural hot spring nearby" },
   { src: waterfall, alt: "Dynjandi Waterfall" },
-  { src: breakfast, alt: "Icelandic Breakfast" },
-  { src: aurora, alt: "Northern Lights" },
-  { src: hiking, alt: "Hiking Trails" },
+  { src: breakfast, alt: "Icelandic Breakfast spread" },
 ];
 
 const Gallery = () => {
@@ -37,13 +39,13 @@ const Gallery = () => {
           </h2>
 
           {/* Desktop grid */}
-          <div className="hidden md:grid grid-cols-4 gap-3 max-w-6xl mx-auto">
+          <div className="hidden md:grid grid-cols-4 gap-3 max-w-6xl mx-auto auto-rows-[200px]">
             {images.map((img, i) => (
               <button
                 key={i}
                 onClick={() => setLightbox(i)}
                 className={`overflow-hidden rounded-lg border border-border hover:border-primary/30 transition-all duration-300 cursor-pointer ${
-                  i === 0 ? "col-span-2 row-span-2" : ""
+                  i === 0 ? "col-span-2 row-span-2" : i === 3 ? "col-span-2" : ""
                 }`}
               >
                 <img
