@@ -24,6 +24,7 @@ export const translations = {
     },
     rating: { en: "4.9 · 127 reviews", pl: "4.9 · 127 recenzji", is: "4.9 · 127 umsagnir" },
     bookNow: { en: "Book now", pl: "Zarezerwuj", is: "Bóka núna" },
+    bookDirect: { en: "Book direct — save 15%", pl: "Rezerwuj bezpośrednio — oszczędź 15%", is: "Bókaðu beint — sparaðu 15%" },
     viewRooms: { en: "View rooms", pl: "Zobacz pokoje", is: "Skoða herbergi" },
   },
   infoStrip: {
