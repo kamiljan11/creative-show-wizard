@@ -17,7 +17,7 @@ import WebsiteCTA from "@/components/WebsiteCTA";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollReveal from "@/components/ScrollReveal";
-import { MountainDivider, WaveDivider, DiamondSeparator } from "@/components/SvgDecorations";
+import { WaveDivider, DiamondSeparator } from "@/components/SvgDecorations";
 
 const Index = () => (
   <div className="min-h-screen">
@@ -27,12 +27,11 @@ const Index = () => (
       <InfoStrip />
     </ScrollReveal>
 
-    <MountainDivider className="text-card -mb-px" />
     <ScrollReveal>
       <HostStory />
     </ScrollReveal>
 
-    <WaveDivider className="text-primary my-4 md:my-8" />
+    <WaveDivider className="text-primary my-2 md:my-6" />
 
     <ScrollReveal>
       <Rooms />
@@ -44,32 +43,31 @@ const Index = () => (
       <Gallery />
     </ScrollReveal>
 
-    <MountainDivider className="text-card -mb-px" flip />
-    <MountainDivider className="text-background -mb-px" />
+    <WaveDivider className="text-primary my-2 md:my-6" />
 
     <ScrollReveal>
       <Experiences />
     </ScrollReveal>
 
-    <WaveDivider className="text-primary my-4 md:my-8" />
+    <DiamondSeparator className="my-6 md:my-10" />
 
     <ScrollReveal>
       <Amenities />
     </ScrollReveal>
 
-    <DiamondSeparator className="my-6 md:my-10" />
+    <WaveDivider className="text-primary my-2 md:my-6" />
 
     <ScrollReveal>
       <Reviews />
     </ScrollReveal>
 
-    <MountainDivider className="text-background -mb-px" />
+    <DiamondSeparator className="my-6 md:my-10" />
 
     <ScrollReveal>
       <SeasonalPricing />
     </ScrollReveal>
 
-    <WaveDivider className="text-primary my-4 md:my-8" />
+    <WaveDivider className="text-primary my-2 md:my-6" />
 
     <ScrollReveal>
       <Location />
@@ -81,7 +79,7 @@ const Index = () => (
       <FAQ />
     </ScrollReveal>
 
-    <MountainDivider className="text-card -mb-px" />
+    <WaveDivider className="text-primary my-2 md:my-6" />
 
     <ScrollReveal>
       <ContactForm />
