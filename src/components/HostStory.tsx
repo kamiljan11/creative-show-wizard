@@ -59,7 +59,7 @@ const HostStory = () => {
             <p className="text-sm md:text-base text-muted-foreground font-body leading-relaxed mb-6 md:mb-8">
               {t.host.story[lang]}
             </p>
-        </div>
+          </div>
       </div>
     </section>
   );
