@@ -1,11 +1,10 @@
-import { Plane, Car, CloudSnow, HandMetal, MapPin } from "lucide-react";
+import { Car, CloudSnow, HandMetal, MapPin } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 
 const Location = () => {
   const { lang, t } = useLang();
 
   const info = [
-    { icon: Plane, ...t.location.airport },
     { icon: Car, ...t.location.drive },
     { icon: CloudSnow, ...t.location.road },
     { icon: HandMetal, ...t.location.pickup },
