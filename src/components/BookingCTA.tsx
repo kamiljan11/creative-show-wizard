@@ -3,6 +3,7 @@ import { CalendarDays, Phone, Mail, MessageCircle, ShieldCheck, ExternalLink } f
 import { useLang } from "@/i18n/LanguageContext";
 
 const BOOKING_URL = "https://www.booking.com/hotel/is/fjallsyn-cottage.html";
+const AIRBNB_URL = "https://www.airbnb.com/rooms/fjallsyn-cottage";
 
 const BookingCTA = () => {
   const { lang, t } = useLang();
