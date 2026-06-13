@@ -85,7 +85,8 @@ const Footer = () => {
 
         <div className="text-center">
           <p className="text-[10px] md:text-xs text-muted-foreground font-body">
-            {t.footer.rights[lang]}
+            {t.footer.rights[lang]}{" · "}built by{" "}
+            <a href="https://kamiljan.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Kamil Jan</a>
           </p>
         </div>
       </div>
